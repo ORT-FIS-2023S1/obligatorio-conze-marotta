@@ -47,6 +47,10 @@ También consideramos importante mantener la versión del repositorio remoto act
 
 ## Elicitación
 
+Las entrevistas son una herramienta valiosa para obtener información y comprender las necesidades y problemas que los usuarios enfrentan al utilizar un producto o servicio. Al realizar entrevistas a los usuarios, podemos obtener información detallada y específica que nos permitirá entender sus necesidades y expectativas, así como sus hábitos y comportamientos en relación con el uso del comedor escolar. Esto es fundamental para poder diseñar una app que sea útil, fácil de usar y que resuelva los problemas reales que los usuarios enfrentan. Además, las entrevistas nos permiten establecer una relación de confianza con los usuarios y obtener su feedback directo, lo que nos permite adaptar y mejorar la app de acuerdo a sus necesidades.
+
+En esta ocasión, entrevistamos a tres personas pertenecientes a distintos grupos de interés. Dos de ellas, son un padre y una madre de niños que asisten a colegios con comedor escolar, y la persona restante es una maestra que colabora en las tareas de un comedor.
+
 ## Especificación
 
 ## Validación y verificación
