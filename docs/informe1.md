@@ -74,6 +74,11 @@ Por último, entrevistamos a Malena Olivera, de 24 años, maestra en un colegio 
 
 ### User Persona
 
+Gracias a las entrevistas realizadas y a la documentación revisada, hemos podido identificar las necesidades, comportamientos y expectativas de los usuarios en relación con el uso del comedor escolar. Estos user persona nos ayudarán a diseñar una app que sea relevante y útil para nuestros usuarios, al mismo tiempo que nos permitirá centrarnos en sus necesidades y expectativas específicas para poder crear una experiencia de usuario satisfactoria.
+
+![Laura](elicitacion/user_persona/user_persona_Laura.png?raw=true  "Laura")
+![Jose](elicitacion/user_persona/user_persona_Jose.png?raw=true  "Jose")
+
 ### Modelo conceptual del problema
 
 ## Especificación
