@@ -190,9 +190,163 @@ Detectamos dos posibles tipos de usuarios: por un lado los padres, madres o tuto
 
 ### Requerimientos no funcionales
 
+#### RNF1: Interfaz
+- **Descripción:**  La aplicación en su v1 debe tener como color primario Green 900, como color secundario Light Blue 800, basandose en la paleta de colores creada en 2014 por [Material Design](https://m2.material.io/design/color/the-color-system.html#tools-for-picking-colors/), fuente Roboto e Iconos de tipo "Filled",
+
+#### RNF2: Velocidad de refresco
+- **Descripción:**  La aplicación en su v1 ser rápida y eficiente, especialmente cuando se trata de la carga de menús y la selección de comidas. Se debe establecer un tiempo de refresco máximo de 2 segundos para que los usuarios no tengan que  esperar a que la aplicación cargue o responda a sus acciones.
+
+#### RNF3: Seguridad
+- **Descripción:** La aplicación en su v1 debe ser segura y mantener la privacidad de los datos de los usuarios, para esto deberá utilizar SSL (Secure Socket Layer). Es un protocolo que cifra la información entre el dispositivo móvil y el servidor, garantizando la privacidad y la seguridad de los datos.
+
+#### RNF4: Concurrencia
+- **Descripción:**  La aplicación en su v1 debe soportar hasta 150 usuarios concurrentes.
+
+#### RNF5: Accesibilidad
+ - **Descripción:**  La aplicación debe ser accesible para todos los usuarios, independientemente de su capacidad. En su v1, la aplicación deberá cumplir con los estándares de accesibilidad WCAG, que garantizan que la aplicación sea fácilmente comprensible y utilizada por todos.
+
+#### RNF6: Idioma
+- **Descripción:**  La aplicación, en su v1, deberá estar disponible únicamente en idioma Español.
+
+#### RNF7: Codificación
+- **Descripción:**  La aplicación deberá seguir los estándares de codificación HTML/JS de Google, el uso de un sistema de control de versiones de Git, y el análisis estático de código utilizando ESLint. 
+
+#### RNF8: Compatibilidad
+- **Descripción:**  La aplicación en su v1 debe ser responsiva, compatible con dispositivos móviles con sistema operativo Android 7.0 o superior, iOS 11 o superior, así como con los navegadores web Chrome 94.0.4606.81 o superior, y Firefox 96.0.4 o superior.
+
 ### User stories
 
+## Historias de Usuarios
+
+### Historia usuario Ana (madre de un niño)
+####  Título: Quiero registrar a mi hijo y detallar sus alergias.
+
+**Como** madre de un niño, quiero poder registrar a mi hijo en el comedor estudiantil y especificar si tiene alguna alergia alimentaria para asegurarme de que reciba comidas seguras y nutritivas.
+
+**Criterios de aceptación:**
+- Le muestra una amplia lista de alergías y en caso de no estar, permite escribir libremente.
+- Le envía una notificación de que se registró una nueva alergía a las encargadas del comedor.
+- Le permite editar la información de su hijo.
+
+---
+
+### Historia usuario Diego (padre de un niño)
+#### Título: Realizar pedidos de menú.
+
+**Como** padre de un niño que utiliza la aplicación del comedor escolar, quiero poder realizar pedidos de comida para mi hijo de manera fácil y rápida, para ahorrar tiempo y evitar largas filas en el comedor.
+
+**Criterios de aceptación:**
+- Interfaz amigable y fácil de usar para realizar pedidos.
+- Opciones para seleccionar los platos que se desean para el almuerzo.
+- Información actualizada sobre el menú y la disponibilidad de platos para niños con alergias.
+- Sistema de pago en línea seguro y confiable.
+
+---
+
+### Historia usuario Pedro (administrador del comedor)
+#### Título: Controlar y administrar los pedidos.
+
+**Como** administrador del comedor escolar, quiero poder gestionar las órdenes de comida recibidas a través de la aplicación, para garantizar que se entreguen las comidas adecuadas a los niños y que se cumplan los requisitos de seguridad alimentaria.
+
+**Criterios de aceptación:**
+- Interfaz de administrador para ver y gestionar los pedidos recibidos.
+- Capacidad de filtrar los pedidos por fecha, grado y tipo de comida.
+- Información detallada sobre las órdenes, incluyendo los platos solicitados y la información de alergias y preferencias.
+- Alertas automáticas sobre pedidos especiales y alergias, para evitar errores en la entrega de comidas.
+
+
 ### Use cases
+
+###  Iniciar sesión en la aplicación del comedor escolar
+
+**Actor primario:** Padre o tutor legal de un estudiante en la escuela
+
+**Precondiciones:**
+
+1. El padre o tutor legal tiene acceso a un dispositivo con conexión a internet.
+2. La aplicación del comedor escolar está instalada en el dispositivo.
+3. El padre o tutor legal tiene información de inicio de sesión válida (si ya tiene una cuenta).
+
+**Curso principal de eventos:**
+ 
+1. El padre o tutor legal abre la aplicación del comedor escolar en su dispositivo.
+2. Si el padre o tutor legal no tiene una cuenta, selecciona la opción de "Crear cuenta".
+3. El padre o tutor legal proporciona su información personal, incluyendo código de la cantina, nombre completo, dirección de correo electrónico, y una contraseña segura.
+4. El padre o tutor legal acepta los términos y condiciones de uso de la aplicación y la política de privacidad.
+5. Si el padre o tutor legal ya tiene una cuenta, selecciona la opción de "Iniciar sesión".
+6. El padre o tutor legal proporciona su dirección de correo electrónico y su contraseña para iniciar sesión.
+7. La aplicación verifica la información de inicio de sesión y autentica al padre o tutor legal.
+8. Si la información de inicio de sesión es válida, la aplicación muestra la página principal de la cuenta del padre o tutor legal.
+
+**Cursos alternativos:**
+
+3.1. Si la contraseña ingresada es demasiado débil, la aplicación puede solicitar que la contraseña sea más segura para garantizar la protección de la información de la cuenta.
+
+6.1. La información de inicio de sesión es incorrecta, la aplicación debe proporcionar un mensaje de error y permitir al padre o tutor legal intentar iniciar sesión nuevamente o recuperar la contraseña.
+
+---
+
+### Registro de un estudiante con alergias
+
+**Actor:** Madre del estudiante
+
+**Descripción:** Este caso de uso describe cómo la madre de un estudiante puede registrar a su hijo en la aplicación del comedor escolar y especificar sus alergias para que el personal del comedor pueda tomar las precauciones necesarias al servir sus comidas.
+
+**Precondiciones:**
+1. La madre tiene una cuenta en la aplicación del comedor escolar.
+2. El estudiante no está registrado en el comedor escolar.
+
+Curso principal de eventos:
+
+ 1. La madre inicia sesión en la aplicación del comedor escolar.
+2. La madre accede a la sección de registro de estudiantes.
+3. La madre ingresa los datos personales del estudiante, incluyendo su nombre completo y su fecha de nacimiento.
+4. La madre especifica las alergias del estudiante, indicando los alimentos que debe evitar y cualquier otra información relevante.
+5. La madre guarda los datos del estudiante.
+6. La aplicación confirma el registro del estudiante y muestra un mensaje indicando que el estudiante ahora está registrado en el comedor escolar.
+
+**Cursos alternativos:**
+
+3.1. Si el estudiante ya está registrado en el comedor escolar, la aplicación muestra un mensaje de error indicando que el estudiante ya está registrado y no permite el registro nuevamente.
+
+5.1. Si la madre deja algún campo en blanco, la aplicación muestra un mensaje de error indicando que se requieren todos los campos para completar el registro.
+
+5.2. Completa los campos que dejó en blanco, sin especificar las alergías.
+
+5.3. Si la madre no especifica las alergias del estudiante, la aplicación muestra un mensaje de advertencia indicando que es importante proporcionar esta información para garantizar la seguridad del estudiante durante las comidas escolares.
+
+Este caso de uso es importante para garantizar la seguridad de los estudiantes con alergias alimentarias en el comedor escolar. Al permitir a los padres o tutores legales registrar a sus hijos y especificar sus alergias en la aplicación del comedor escolar, el personal del comedor puede tomar las precauciones necesarias al servir sus comidas.
+
+---
+
+### Acceso a información de pedidos y alergias de los estudiantes
+
+**Actor:** Administrador del comedor
+
+Descripción: Este caso de uso describe cómo el administrador del comedor escolar puede acceder a la información de los pedidos y las alergias de los estudiantes en la aplicación del comedor escolar para asegurarse de que se preparen las comidas adecuadas y se tomen las precauciones necesarias para garantizar la seguridad de los estudiantes con alergias alimentarias.
+
+**Precondiciones:**
+
+1. El administrador tiene una cuenta en la aplicación del comedor escolar.
+2. Se han registrado estudiantes y sus pedidos en la aplicación del comedor escolar.
+3. Se han registrado alergias y condiciones de los estudiantes en la aplicación del comedor escolar.
+
+**Curso principal de eventos:**
+
+1. El administrador inicia sesión en la aplicación del comedor escolar.
+2. Accede a la sección de información de pedidos y alergias.
+3. La aplicación muestra una lista de los pedidos de comida que se han realizado para el día.
+4. El administrador revisa la lista de pedidos y verifica que se hayan hecho los pedidos adecuados para cada estudiante.
+5. La aplicación muestra una lista de los estudiantes con alergias alimentarias y otras condiciones especiales.
+6. El administrador revisa la lista de estudiantes con alergias y otras condiciones y verifica que se hayan tomado las precauciones adecuadas al preparar sus comidas.
+7. El administrador cierra la sección de información de pedidos y alergias.
+
+**Cursos alternativos:**
+
+2.1. Si no se han registrado pedidos o alergias en la aplicación del comedor escolar, la aplicación muestra un mensaje indicando que no hay información disponible.
+
+4.1 Si el administrador detecta un error en la lista de pedidos o alergias, puede notificar a su responsable a cargo para que este edite la información correspondiente.
+
 
 ## Validación y verificación
 ## Reflexión
