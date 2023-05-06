@@ -98,5 +98,101 @@ Gracias a las entrevistas realizadas y a la documentación revisada, hemos podid
 
 ## Especificación
 
+### Requerimientos funcionales
+
+Detectamos dos posibles tipos de usuarios: por un lado los padres, madres o tutores de los niños de las escuelas, de los cuales de aquí en adelante nos referiremos como *tutores*, y por otro lado los administradores de los comedores. 
+
+#### RF01: Registrar niños en la cuenta
+- **Actor:** Tutor
+- **Descripción:** El sistema debe permitir registrar los niños a cargo del usuario en su cuenta para luego poder pedirles comida.
+- **Prioridad:** 
+
+#### RF02: Modificar datos de los niños asociados a la cuenta
+- **Actor:** Tutor
+- **Descripción:** El sistema debe permitir modificar los datos de los niños asociados a la cuenta del usuario.
+- **Prioridad:** 
+
+#### RF03: Eliminar niños asociados a la cuenta
+- **Actor:** Tutor
+- **Descripción:** El sistema debe permitir eliminar niños previamente asociados a la cuenta del usuario.
+- **Prioridad:** 
+
+#### RF04: Cargar billetera virtual
+- **Actor:** Tutor
+- **Descripción:** El sistema debe permitir recargar el saldo de la billetera virtual desde una tarjeta de crédito o débito, para posteriormente poder realizar pedidos.
+- **Prioridad:** 
+
+#### RF05: Realizar pedido
+- **Actor:** Tutor
+- **Descripción:** El sistema debe permitir realizar un pedido, indicando menús, cantidad, los niños previamente asociados a la cuenta que retiraran el pedido en el comedor, y fecha del retiro.
+- **Prioridad:** 
+
+#### RF06: Cancelar pedido
+- **Actor:** Tutor
+- **Descripción:** El sistema debe permitir cancelar un pedido hasta un día antes de la fecha de entrega especificada.
+- **Prioridad:** 
+
+#### RF07: Modificar pedido
+- **Actor:** Tutor
+- **Descripción:** El sistema debe permitir modificar un pedido ya realizado, exeptuando la fecha de entrega.
+- **Prioridad:** 
+
+#### RF08: Historial de pedidos
+- **Actor:** Tutor
+- **Descripción:** El sistema debe permitir ver el historial de pedidos realizados por el usuario, ordenados por fecha hacia atrás.
+- **Prioridad:** 
+
+#### RF09: Publicar menú
+- **Actor:** Administrador del comedor
+- **Descripción:** El sistema debe permitir publicar un menú en el sistema. 
+- **Prioridad:** 
+
+#### RF10: Modificar menú
+- **Actor:** Administrador del comedor
+- **Descripción:** El sistema debe permitir modificar un menú existente en el sistema.
+- **Prioridad:** 
+
+#### RF11: Eliminar menú
+- **Actor:** Administrador del comedor
+- **Descripción:** El sistema debe permitir eliminar un menú existente en el sistema.
+- **Prioridad:** 
+
+#### RF12: Enviar alerta
+- **Actor:** Administrador del comedor
+- **Descripción:** El sistema debe permitir al administrador enviar una alerta asociada a un pedido específico al usuario que la realizó, indicando motivo de la alerta (por ejemplo, una razón para un envío de alerta es la compra de un alimento con gluten para un estudiante celíaco).
+- **Prioridad:** 
+
+#### RF13: Obtener menú de niño
+- **Actor:** Administrador del comedor
+- **Descripción:** Ingresando el dato identificador del niño, el usuario debe poder obtener el menú solicitado para el mismo día para él. 
+- **Prioridad:** 
+
+#### RF14: Registrar compra
+- **Actor:** Administrador del comedor
+- **Descripción:** El administrador debe poder registrar la compra de un menú por un niño, debitandose el monto de la villetera virtual del usuario a cargo de este (para casos en que el niño pide en el mostrador).
+- **Prioridad:** 
+
+#### RF15: Alta de cupón
+- **Actor:** Administrador del comedor
+- **Descripción:** El sistema debe permitir al administrador registrar un cupón de bonificación en el sistema.
+- **Prioridad:** 
+
+#### RF16: Agregar cupón
+- **Actor:** Tutor
+- **Descripción:** El sistema debe permitir al tutor agregar un cupón a su cuenta, para posteriormente poder utilizarlo en un pedido para obtener una bonificación.
+- **Prioridad:** 
+
+#### RF17: Ver listado de pedidos
+- **Actor:** Administrador del comedor
+- **Descripción:** Se debe permitir al usuario acceder al listado de pedidos del día que indique este, con el detalle de cada uno.
+- **Prioridad:** 
+
+
+### Requerimientos no funcionales
+
+### User stories
+
+### Use cases
+
 ## Validación y verificación
 ## Reflexión
