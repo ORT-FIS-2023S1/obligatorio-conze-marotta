@@ -104,12 +104,12 @@ Detectamos dos posibles tipos de usuarios: por un lado los padres, madres o tuto
 
 #### RF01: Registrar niños en la cuenta
 - **Actor:** Tutor
-- **Descripción:** El sistema debe permitir registrar los niños a cargo del usuario en su cuenta para luego poder pedirles comida.
+- **Descripción:** El sistema debe permitir registrar los niños a cargo del usuario en su cuenta, indicando nombre, apellido, cedula de identidad, clase, y fecha de nacimiento de cada uno, e indicando también condiciones médicas (celiaquía, diabetes, alergias).
 - **Prioridad:** 
 
 #### RF02: Modificar datos de los niños asociados a la cuenta
 - **Actor:** Tutor
-- **Descripción:** El sistema debe permitir modificar los datos de los niños asociados a la cuenta del usuario.
+- **Descripción:** El sistema debe permitir modificar el nombre, apellido, clase, fecha de nacimiento y condiciones médicas de los niños asociados a la cuenta del usuario.
 - **Prioridad:** 
 
 #### RF03: Eliminar niños asociados a la cuenta
@@ -119,12 +119,12 @@ Detectamos dos posibles tipos de usuarios: por un lado los padres, madres o tuto
 
 #### RF04: Cargar billetera virtual
 - **Actor:** Tutor
-- **Descripción:** El sistema debe permitir recargar el saldo de la billetera virtual desde una tarjeta de crédito o débito, para posteriormente poder realizar pedidos.
+- **Descripción:** El sistema debe permitir recargar el saldo de la billetera virtual ingresando el saldo a recargar, tipo de tarjeta (crédito o débito), y número de tarjeta.
 - **Prioridad:** 
 
 #### RF05: Realizar pedido
 - **Actor:** Tutor
-- **Descripción:** El sistema debe permitir realizar un pedido, indicando menús, cantidad, los niños previamente asociados a la cuenta que retiraran el pedido en el comedor, y fecha del retiro.
+- **Descripción:** El sistema debe permitir realizar un pedido, seleccionando menús, cantidad de cada uno, los niños previamente asociados a la cuenta que retiraran el pedido en el comedor, y fecha del retiro. También seleccionar un cupón previamente ingresado para obtener una bonificación en el precio.
 - **Prioridad:** 
 
 #### RF06: Cancelar pedido
@@ -134,7 +134,7 @@ Detectamos dos posibles tipos de usuarios: por un lado los padres, madres o tuto
 
 #### RF07: Modificar pedido
 - **Actor:** Tutor
-- **Descripción:** El sistema debe permitir modificar un pedido ya realizado, exeptuando la fecha de entrega.
+- **Descripción:** El sistema debe permitir modificar los datos de un pedido ya realizado, exeptuando la fecha de entrega.
 - **Prioridad:** 
 
 #### RF08: Historial de pedidos
@@ -144,12 +144,12 @@ Detectamos dos posibles tipos de usuarios: por un lado los padres, madres o tuto
 
 #### RF09: Publicar menú
 - **Actor:** Administrador del comedor
-- **Descripción:** El sistema debe permitir publicar un menú en el sistema. 
+- **Descripción:** El sistema debe permitir publicar un menú en el sistema, ingresando nombre del plato, descripción, ingredientes, si es apto para celíacos, y si es apto para diabéticos. 
 - **Prioridad:** 
 
 #### RF10: Modificar menú
 - **Actor:** Administrador del comedor
-- **Descripción:** El sistema debe permitir modificar un menú existente en el sistema.
+- **Descripción:** El sistema debe permitir modificar el nombre, descripción e ingredientes de un menú existente en el sistema. También puede modificarse si es apto para celíacos o diabéticos.
 - **Prioridad:** 
 
 #### RF11: Eliminar menú
@@ -164,29 +164,28 @@ Detectamos dos posibles tipos de usuarios: por un lado los padres, madres o tuto
 
 #### RF13: Obtener menú de niño
 - **Actor:** Administrador del comedor
-- **Descripción:** Ingresando el dato identificador del niño, el usuario debe poder obtener el menú solicitado para el mismo día para él. 
+- **Descripción:** Ingresando el dato identificador del niño, el usuario debe poder obtener el menú solicitado para el mismo día para él niño. 
 - **Prioridad:** 
 
 #### RF14: Registrar compra
 - **Actor:** Administrador del comedor
-- **Descripción:** El administrador debe poder registrar la compra de un menú por un niño, debitandose el monto de la villetera virtual del usuario a cargo de este (para casos en que el niño pide en el mostrador).
+- **Descripción:** El administrador debe poder registrar la compra de un menú por un niño, ingresando la cédula del niño y el menú elegido, debitandose el monto de la villetera virtual del usuario a cargo de este (para casos en que el niño pide en el mostrador).
 - **Prioridad:** 
 
 #### RF15: Alta de cupón
 - **Actor:** Administrador del comedor
-- **Descripción:** El sistema debe permitir al administrador registrar un cupón de bonificación en el sistema.
+- **Descripción:** El sistema debe permitir al administrador registrar un cupón de bonificación en el sistema, ingresando el código de cupón, descripción, y porcentaje de bonificación.
 - **Prioridad:** 
 
 #### RF16: Agregar cupón
 - **Actor:** Tutor
-- **Descripción:** El sistema debe permitir al tutor agregar un cupón a su cuenta, para posteriormente poder utilizarlo en un pedido para obtener una bonificación.
+- **Descripción:** El sistema debe permitir al tutor agregar un cupón a su cuenta ingresando el código de cupón.
 - **Prioridad:** 
 
 #### RF17: Ver listado de pedidos
 - **Actor:** Administrador del comedor
 - **Descripción:** Se debe permitir al usuario acceder al listado de pedidos del día que indique este, con el detalle de cada uno.
 - **Prioridad:** 
-
 
 ### Requerimientos no funcionales
 
