@@ -95,6 +95,7 @@ Gracias a las entrevistas realizadas y a la documentación revisada, hemos podid
 ![Jose](../elicitacion/user-persona/user-persona-Jose.png?raw=true  "Jose")
 
 ### Modelo conceptual del problema
+![ModeloConceptual](../elicitacion/DiagramaConceptual.jpeg "Modelo conceptual")
 
 ## Especificación
 
