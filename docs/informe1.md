@@ -123,19 +123,19 @@ Detectamos dos posibles tipos de usuarios: por un lado los padres, madres o tuto
 - **Descripción:** El sistema debe permitir recargar el saldo de la billetera virtual ingresando el saldo a recargar, tipo de tarjeta (crédito o débito), y número de tarjeta.
 - **Prioridad:** Alta
 
-#### RF05: Realizar pedido
+#### RF05: Agregar menú al carrito
 - **Actor:** Tutor
-- **Descripción:** El sistema debe permitir realizar un pedido, seleccionando menús, cantidad de cada uno, los niños previamente asociados a la cuenta que retiraran el pedido en el comedor, y fecha del retiro. También seleccionar un cupón previamente ingresado para obtener una bonificación en el precio.
+- **Descripción:** El sistema debe permitir agregar un menú al carrito, seleccionando dicho menú, la cantidad, los niños que retiraran el menú en el comedor, y la fecha del retiro.
 - **Prioridad:** Alta
 
-#### RF06: Cancelar pedido
+#### RF06: Realizar pedido
+- **Actor:** Tutor
+- **Descripción:** El sistema debe permitir realizar el pedido de los menús ingresando al carrito. Se debe mostrar los menús incluidos en el carrito, cantidad de cada uno, y el precio total. También se debe dar la opción de eliminar cada menú. Además se debe permitir seleccionar un cupón previamente ingresado para obtener una bonificación en el precio.
+- **Prioridad:** Alta
+
+#### RF07: Cancelar pedido
 - **Actor:** Tutor
 - **Descripción:** El sistema debe permitir cancelar un pedido hasta un día antes de la fecha de entrega especificada.
-- **Prioridad:** Alta
-
-#### RF07: Modificar pedido
-- **Actor:** Tutor
-- **Descripción:** El sistema debe permitir modificar los datos de un pedido ya realizado, exeptuando la fecha de entrega.
 - **Prioridad:** Alta
 
 #### RF08: Historial de pedidos
@@ -145,7 +145,7 @@ Detectamos dos posibles tipos de usuarios: por un lado los padres, madres o tuto
 
 #### RF09: Publicar menú
 - **Actor:** Administrador del comedor
-- **Descripción:** El sistema debe permitir publicar un menú en el sistema, ingresando nombre del plato, descripción, ingredientes, si es apto para celíacos, y si es apto para diabéticos. 
+- **Descripción:** El sistema debe permitir publicar un menú en el sistema, ingresando nombre del plato, descripción, ingredientes, si es apto para celíacos, y si es apto para diabéticos. También debe indicar que días estará disponible el menú.
 - **Prioridad:** Alta
 
 #### RF10: Modificar menú
@@ -224,12 +224,13 @@ Detectamos dos posibles tipos de usuarios: por un lado los padres, madres o tuto
 ### Historia usuario Ana (madre de un niño)
   **Título: Quiero registrar a mi hijo y detallar sus alergias.**
 
-Como madre de un niño, quiero poder registrar a mi hijo en el comedor estudiantil y especificar si tiene alguna alergia alimentaria para asegurarme de que reciba comidas seguras y nutritivas.
+Como madre de un niño, quiero poder registrar a mi hijo en el comedor estudiantil y especificar si tiene celiaquía, diabetes o alguna alergia alimentaria para asegurarme de que reciba comidas seguras y nutritivas.
 
 **Criterios de aceptación:**
+- Muestra dos checkboxs, uno para indicar si el niño es celíaco y el otro si es diebético.
 - Le muestra una amplia lista de alergías y en caso de no estar, permite escribir libremente.
-- Le envía una notificación de que se registró una nueva alergía a las encargadas del comedor.
-- Le permite editar la información de su hijo.
+- Si se ingresó una nueva alergía, se le envía una notificación al administrador del comedor.
+- El sistema le permite ingresar nombre, apellido, grupo, cédula de identidad y fecha de nacimiento.
 
 ---
 
@@ -240,8 +241,9 @@ Como padre de un niño que utiliza la aplicación del comedor escolar, quiero po
 
 **Criterios de aceptación:**
 - Interfaz amigable y fácil de usar para realizar pedidos.
-- Opciones para seleccionar los platos que se desean para el almuerzo.
-- Información actualizada sobre el menú y la disponibilidad de platos para niños con alergias.
+- Opciones para seleccionar los platos que se desean para el almuerzo, con el detalle de cada uno.
+- Información actualizada sobre el menú y la disponibilidad de platos para niños con alergias, celíacos o diabéticos.
+- Permite asociar los menús a cada hijo.
 - Sistema de pago en línea seguro y confiable.
 
 ---
@@ -252,7 +254,7 @@ Como padre de un niño que utiliza la aplicación del comedor escolar, quiero po
 Como administrador del comedor escolar, quiero poder gestionar las órdenes de comida recibidas a través de la aplicación, para garantizar que se entreguen las comidas adecuadas a los niños y que se cumplan los requisitos de seguridad alimentaria.
 
 **Criterios de aceptación:**
-- Interfaz de administrador para ver y gestionar los pedidos recibidos.
+- Interfaz de administrador para ver el listado de pedidos recibidos y gestionarlos.
 - Capacidad de filtrar los pedidos por fecha, grado y tipo de comida.
 - Información detallada sobre las órdenes, incluyendo los platos solicitados y la información de alergias y preferencias.
 - Alertas automáticas sobre pedidos especiales y alergias, para evitar errores en la entrega de comidas.
@@ -301,22 +303,23 @@ Como administrador del comedor escolar, quiero poder gestionar las órdenes de c
 
 Curso principal de eventos:
 
- 1. La madre inicia sesión en la aplicación del comedor escolar.
+1. La madre inicia sesión en la aplicación del comedor escolar.
 2. La madre accede a la sección de registro de estudiantes.
-3. La madre ingresa los datos personales del estudiante, incluyendo su nombre completo y su fecha de nacimiento.
-4. La madre especifica las alergias del estudiante, indicando los alimentos que debe evitar y cualquier otra información relevante.
-5. La madre guarda los datos del estudiante.
-6. La aplicación confirma el registro del estudiante y muestra un mensaje indicando que el estudiante ahora está registrado en el comedor escolar.
+3. La madre ingresa los datos personales del estudiante, incluyendo su nombre, apellido, cedula de identidad y fecha de nacimiento.
+4. La madre indica si su hijo es diabético o celíaco.
+5. La madre especifica las alergias del estudiante.
+6. La madre guarda los datos del estudiante.
+7. La aplicación confirma el registro del estudiante y muestra un mensaje indicando que el estudiante ahora está registrado en el comedor escolar.
 
 **Cursos alternativos:**
 
 3.1. Si el estudiante ya está registrado en el comedor escolar, la aplicación muestra un mensaje de error indicando que el estudiante ya está registrado y no permite el registro nuevamente.
 
-5.1. Si la madre deja algún campo en blanco, la aplicación muestra un mensaje de error indicando que se requieren todos los campos para completar el registro.
+6.1. Si la madre deja algún campo en blanco, la aplicación muestra un mensaje de error indicando que se requieren todos los campos para completar el registro.
 
-5.2. Completa los campos que dejó en blanco, sin especificar las alergías.
+6.2. Completa los campos que dejó en blanco, sin especificar las alergías.
 
-5.3. Si la madre no especifica las alergias del estudiante, la aplicación muestra un mensaje de advertencia indicando que es importante proporcionar esta información para garantizar la seguridad del estudiante durante las comidas escolares.
+6.3. Si la madre no especifica las alergias del estudiante, la aplicación muestra un mensaje de advertencia indicando que es importante proporcionar esta información para garantizar la seguridad del estudiante durante las comidas escolares.
 
 Este caso de uso es importante para garantizar la seguridad de los estudiantes con alergias alimentarias en el comedor escolar. Al permitir a los padres o tutores legales registrar a sus hijos y especificar sus alergias en la aplicación del comedor escolar, el personal del comedor puede tomar las precauciones necesarias al servir sus comidas.
 
