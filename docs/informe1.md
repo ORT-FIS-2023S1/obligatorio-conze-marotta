@@ -106,122 +106,125 @@ Detectamos dos posibles tipos de usuarios: por un lado los padres, madres o tuto
 #### RF01: Registrar niños en la cuenta
 - **Actor:** Tutor
 - **Descripción:** El sistema debe permitir registrar los niños a cargo del usuario en su cuenta, indicando nombre, apellido, cedula de identidad, clase, y fecha de nacimiento de cada uno, e indicando también condiciones médicas (celiaquía, diabetes, alergias).
-- **Prioridad:** 
+- **Prioridad:** Alta
 
 #### RF02: Modificar datos de los niños asociados a la cuenta
 - **Actor:** Tutor
 - **Descripción:** El sistema debe permitir modificar el nombre, apellido, clase, fecha de nacimiento y condiciones médicas de los niños asociados a la cuenta del usuario.
-- **Prioridad:** 
+- **Prioridad:** Alta
 
 #### RF03: Eliminar niños asociados a la cuenta
 - **Actor:** Tutor
 - **Descripción:** El sistema debe permitir eliminar niños previamente asociados a la cuenta del usuario.
-- **Prioridad:** 
+- **Prioridad:** Alta
 
 #### RF04: Cargar billetera virtual
 - **Actor:** Tutor
 - **Descripción:** El sistema debe permitir recargar el saldo de la billetera virtual ingresando el saldo a recargar, tipo de tarjeta (crédito o débito), y número de tarjeta.
-- **Prioridad:** 
+- **Prioridad:** Alta
 
 #### RF05: Realizar pedido
 - **Actor:** Tutor
 - **Descripción:** El sistema debe permitir realizar un pedido, seleccionando menús, cantidad de cada uno, los niños previamente asociados a la cuenta que retiraran el pedido en el comedor, y fecha del retiro. También seleccionar un cupón previamente ingresado para obtener una bonificación en el precio.
-- **Prioridad:** 
+- **Prioridad:** Alta
 
 #### RF06: Cancelar pedido
 - **Actor:** Tutor
 - **Descripción:** El sistema debe permitir cancelar un pedido hasta un día antes de la fecha de entrega especificada.
-- **Prioridad:** 
+- **Prioridad:** Alta
 
 #### RF07: Modificar pedido
 - **Actor:** Tutor
 - **Descripción:** El sistema debe permitir modificar los datos de un pedido ya realizado, exeptuando la fecha de entrega.
-- **Prioridad:** 
+- **Prioridad:** Alta
 
 #### RF08: Historial de pedidos
 - **Actor:** Tutor
 - **Descripción:** El sistema debe permitir ver el historial de pedidos realizados por el usuario, ordenados por fecha hacia atrás.
-- **Prioridad:** 
+- **Prioridad:** Media
 
 #### RF09: Publicar menú
 - **Actor:** Administrador del comedor
 - **Descripción:** El sistema debe permitir publicar un menú en el sistema, ingresando nombre del plato, descripción, ingredientes, si es apto para celíacos, y si es apto para diabéticos. 
-- **Prioridad:** 
+- **Prioridad:** Alta
 
 #### RF10: Modificar menú
 - **Actor:** Administrador del comedor
 - **Descripción:** El sistema debe permitir modificar el nombre, descripción e ingredientes de un menú existente en el sistema. También puede modificarse si es apto para celíacos o diabéticos.
-- **Prioridad:** 
+- **Prioridad:** Alta
 
 #### RF11: Eliminar menú
 - **Actor:** Administrador del comedor
 - **Descripción:** El sistema debe permitir eliminar un menú existente en el sistema.
-- **Prioridad:** 
+- **Prioridad:** Alta
 
 #### RF12: Enviar alerta
 - **Actor:** Administrador del comedor
 - **Descripción:** El sistema debe permitir al administrador enviar una alerta asociada a un pedido específico al usuario que la realizó, indicando motivo de la alerta (por ejemplo, una razón para un envío de alerta es la compra de un alimento con gluten para un estudiante celíaco).
-- **Prioridad:** 
+- **Prioridad:** Media
 
 #### RF13: Obtener menú de niño
 - **Actor:** Administrador del comedor
 - **Descripción:** Ingresando el dato identificador del niño, el usuario debe poder obtener el menú solicitado para el mismo día para él niño. 
-- **Prioridad:** 
+- **Prioridad:** Media
 
 #### RF14: Registrar compra
 - **Actor:** Administrador del comedor
-- **Descripción:** El administrador debe poder registrar la compra de un menú por un niño, ingresando la cédula del niño y el menú elegido, debitandose el monto de la villetera virtual del usuario a cargo de este (para casos en que el niño pide en el mostrador).
-- **Prioridad:** 
+- **Descripción:** El administrador debe poder registrar la compra de un menú por un niño, ingresando la cédula del niño y el menú elegido, debitandose el monto de la billetera virtual del usuario a cargo de este (para casos en que el niño pide en el mostrador).
+- **Prioridad:** Media
 
 #### RF15: Alta de cupón
 - **Actor:** Administrador del comedor
 - **Descripción:** El sistema debe permitir al administrador registrar un cupón de bonificación en el sistema, ingresando el código de cupón, descripción, y porcentaje de bonificación.
-- **Prioridad:** 
+- **Prioridad:** Baja
 
 #### RF16: Agregar cupón
 - **Actor:** Tutor
-- **Descripción:** El sistema debe permitir al tutor agregar un cupón a su cuenta ingresando el código de cupón.
-- **Prioridad:** 
+- **Descripción:** En fechas festivas o en ocasiones epesciales, el sistema debe permitir al tutor agregar un cupón a su compra de menú ingresando el código de cupón.
+- **Prioridad:** Baja
 
 #### RF17: Ver listado de pedidos
 - **Actor:** Administrador del comedor
 - **Descripción:** Se debe permitir al usuario acceder al listado de pedidos del día que indique este, con el detalle de cada uno.
-- **Prioridad:** 
+- **Prioridad:** Media
+
+#### RF18: Sistema de puntos
+- **Actor:** Sistema
+- **Descripción:** Con la compra de cada menú, el sistema automáticamente cargará un punto al padre o tutor. Con 10 puntos, el padre o tutor, podrá canjear un menú gratis, y restará esa cantidad de puntos, a los puntos disponibles del usuario.
+- **Prioridad:** Baja
 
 ### Requerimientos no funcionales
 
-#### RNF1: Interfaz
+#### RNF01: Interfaz
 - **Descripción:**  La aplicación en su v1 debe tener como color primario Green 900, como color secundario Light Blue 800, basandose en la paleta de colores creada en 2014 por [Material Design](https://m2.material.io/design/color/the-color-system.html#tools-for-picking-colors/), fuente Roboto e Iconos de tipo "Filled",
 
-#### RNF2: Velocidad de refresco
-- **Descripción:**  La aplicación en su v1 ser rápida y eficiente, especialmente cuando se trata de la carga de menús y la selección de comidas. Se debe establecer un tiempo de refresco máximo de 2 segundos para que los usuarios no tengan que  esperar a que la aplicación cargue o responda a sus acciones.
+#### RNF02: Velocidad de refresco
+- **Descripción:**  La aplicación en su v1 debe ser rápida y eficiente, especialmente cuando se trata de la carga de menús y la selección de comidas. Se debe establecer un tiempo de refresco máximo de 2 segundos para que los usuarios no tengan que  esperar a que la aplicación cargue o responda a sus acciones.
 
-#### RNF3: Seguridad
+#### RNF03: Seguridad
 - **Descripción:** La aplicación en su v1 debe ser segura y mantener la privacidad de los datos de los usuarios, para esto deberá utilizar SSL (Secure Socket Layer). Es un protocolo que cifra la información entre el dispositivo móvil y el servidor, garantizando la privacidad y la seguridad de los datos.
 
-#### RNF4: Concurrencia
+#### RNF04: Concurrencia
 - **Descripción:**  La aplicación en su v1 debe soportar hasta 150 usuarios concurrentes.
 
-#### RNF5: Accesibilidad
+#### RNF05: Accesibilidad
  - **Descripción:**  La aplicación debe ser accesible para todos los usuarios, independientemente de su capacidad. En su v1, la aplicación deberá cumplir con los estándares de accesibilidad WCAG, que garantizan que la aplicación sea fácilmente comprensible y utilizada por todos.
 
-#### RNF6: Idioma
+#### RNF06: Idioma
 - **Descripción:**  La aplicación, en su v1, deberá estar disponible únicamente en idioma Español.
 
-#### RNF7: Codificación
+#### RNF07: Codificación
 - **Descripción:**  La aplicación deberá seguir los estándares de codificación HTML/JS de Google, el uso de un sistema de control de versiones de Git, y el análisis estático de código utilizando ESLint. 
 
-#### RNF8: Compatibilidad
+#### RNF08: Compatibilidad
 - **Descripción:**  La aplicación en su v1 debe ser responsiva, compatible con dispositivos móviles con sistema operativo Android 7.0 o superior, iOS 11 o superior, así como con los navegadores web Chrome 94.0.4606.81 o superior, y Firefox 96.0.4 o superior.
 
 ### User stories
 
-## Historias de Usuarios
-
 ### Historia usuario Ana (madre de un niño)
-####  Título: Quiero registrar a mi hijo y detallar sus alergias.
+  **Título: Quiero registrar a mi hijo y detallar sus alergias.**
 
-**Como** madre de un niño, quiero poder registrar a mi hijo en el comedor estudiantil y especificar si tiene alguna alergia alimentaria para asegurarme de que reciba comidas seguras y nutritivas.
+Como madre de un niño, quiero poder registrar a mi hijo en el comedor estudiantil y especificar si tiene alguna alergia alimentaria para asegurarme de que reciba comidas seguras y nutritivas.
 
 **Criterios de aceptación:**
 - Le muestra una amplia lista de alergías y en caso de no estar, permite escribir libremente.
@@ -231,9 +234,9 @@ Detectamos dos posibles tipos de usuarios: por un lado los padres, madres o tuto
 ---
 
 ### Historia usuario Diego (padre de un niño)
-#### Título: Realizar pedidos de menú.
+**Título: Realizar pedidos de menú.**
 
-**Como** padre de un niño que utiliza la aplicación del comedor escolar, quiero poder realizar pedidos de comida para mi hijo de manera fácil y rápida, para ahorrar tiempo y evitar largas filas en el comedor.
+Como padre de un niño que utiliza la aplicación del comedor escolar, quiero poder realizar pedidos de comida para mi hijo de manera fácil y rápida, para ahorrar tiempo y evitar largas filas en el comedor.
 
 **Criterios de aceptación:**
 - Interfaz amigable y fácil de usar para realizar pedidos.
@@ -244,9 +247,9 @@ Detectamos dos posibles tipos de usuarios: por un lado los padres, madres o tuto
 ---
 
 ### Historia usuario Pedro (administrador del comedor)
-#### Título: Controlar y administrar los pedidos.
+**Título: Controlar y administrar los pedidos.**
 
-**Como** administrador del comedor escolar, quiero poder gestionar las órdenes de comida recibidas a través de la aplicación, para garantizar que se entreguen las comidas adecuadas a los niños y que se cumplan los requisitos de seguridad alimentaria.
+Como administrador del comedor escolar, quiero poder gestionar las órdenes de comida recibidas a través de la aplicación, para garantizar que se entreguen las comidas adecuadas a los niños y que se cumplan los requisitos de seguridad alimentaria.
 
 **Criterios de aceptación:**
 - Interfaz de administrador para ver y gestionar los pedidos recibidos.
@@ -349,4 +352,125 @@ Descripción: Este caso de uso describe cómo el administrador del comedor escol
 
 
 ## Validación y verificación
+
+### Validación
+
+Una vez que se crearon los prototipos y la interfaz de la aplicación, se mostró a dos de los posibles usuarios que habían sido entrevistados anteriormente. En general, los usuarios quedaron satisfechos con la aplicación, ya que cumple con sus expectativas en términos de simpleza e interfaz amigable. Los usuarios pudieron navegar fácilmente por la aplicación y si bien el prototipos no es 100% funcional, pudieron navegar por las ventanas sin ningún problema, lo que demuestra que el diseño de la interfaz se ajustaba a sus necesidades. En resumen, la validación de los usuarios después de la creación de la interfaz y los bocetos confirma que se logró un diseño efectivo y funcional para la aplicación.
+
+### Verificación
+ Para realizar la verificación, vamos a dividirlo en varios items:
+ 1. Completitud
+ 2. Verificabilidad y no ambigüedad
+ 3. Correctitud y consistencia
+ 4. Trazabilidad
+
+Para cada item vamos a enumerar cada una de las pregutnas que nos hicimos para verificar los requerimientos y posteriormente, vamos a realizar una tabla, refiriendonos a cada pregunta por su número:
+
+**Completitud**
+ 1. ¿Se encuentran todos los requerimientos correctamente priorizados?
+2. ¿Son todas las clases de usuarios identificados y sus características descriptas?
+3. ¿Respeta la especificación la estructura y apartados del estándar?
+4. ¿Se identifican y describen las dependencias con otros sistemas?
+5. ¿Están todas las características de calidad tenidas en cuenta en la especificación?
+
+|Nro. Req.|1|2|3|4|5|
+|--------|--|--|--|--|--|
+|RF01|-|-|-|-|-|
+|RF02|-|-|-|-|-|
+|RF03|-|-|-|-|-|
+|RF04|-|-|-|-|-|
+|RF05|-|-|-|-|-|
+|RF06|-|-|-|-|-|
+|RF07|-|-|-|-|-|
+|RF08|-|-|-|-|-|
+|RF09|-|-|-|-|-|
+|RF10|-|-|-|-|-|
+|RF11|-|-|-|-|-|
+|RF12|-|-|-|-|-|
+|RF13|-|-|-|-|-|
+|RF14|-|-|-|-|-|
+|RF15|-|-|-|-|-|
+|RF16|-|-|-|-|-|
+|RF17|-|-|-|-|-|
+|RF18|-|-|-|-|-|
+
+**Verificabilidad y no ambigüedad**
+1. ¿Tiene cada requerimiento una única interpretación?
+2. ¿Puede ser cada requerimiento verificado por alguna prueba, demostración, revisión o análisis?
+
+|Nro. Req.|1|2|
+|--------|--|--|
+|RF01|-|-|
+|RF02|-|-|
+|RF03|-|-|
+|RF04|-|-|
+|RF05|-|-|
+|RF06|-|-|
+|RF07|-|-|
+|RF08|-|-|
+|RF09|-|-|
+|RF10|-|-|
+|RF11|-|-|
+|RF12|-|-|
+|RF13|-|-|
+|RF14|-|-|
+|RF15|-|-|
+|RF16|-|-|
+|RF17|-|-|
+|RF18|-|-|
+
+**Correctitud y consistencia**
+1. ¿Están los requerimientos escritos en forma consistente y a un nivel de detalle adecuado?
+2. ¿Existe duplicación de requerimientos o conflicto entre requerimientos?
+3. ¿Está cada requerimiento dentro del alcance del problema a resolver?
+4. ¿Evitan los requerimientos incluir aspectos de diseño o implementación de la solución?
+
+|Nro. Req.|1|2|3|4|
+|--------|--|--|--|--|
+|RF01|-|-|-|-|
+|RF02|-|-|-|-|
+|RF03|-|-|-|-|
+|RF04|-|-|-|-|
+|RF05|-|-|-|-|
+|RF06|-|-|-|-|
+|RF07|-|-|-|-|
+|RF08|-|-|-|-|
+|RF09|-|-|-|-|
+|RF10|-|-|-|-|
+|RF11|-|-|-|-|
+|RF12|-|-|-|-|
+|RF13|-|-|-|-|
+|RF14|-|-|-|-|
+|RF15|-|-|-|-|
+|RF16|-|-|-|-|
+|RF17|-|-|-|-|
+|RF18|-|-|-|-|
+
+**Trazabilidad**
+1. ¿Puede cada requerimiento ser identificado correctamente y en forma única?
+2. ¿Se referencian correctamente los requerimientos entre si?
+3. ¿Puede cada requerimiento ser referenciado hasta su origen (alguna necesidad de
+los stakeholders)?
+
+|Nro. Req.|1|2|3|
+|--------|--|--|--|
+|RF01|-|-|-|
+|RF02|-|-|-|
+|RF03|-|-|-|
+|RF04|-|-|-|
+|RF05|-|-|-|
+|RF06|-|-|-|
+|RF07|-|-|-|
+|RF08|-|-|-|
+|RF09|-|-|-|
+|RF10|-|-|-|
+|RF11|-|-|-|
+|RF12|-|-|-|
+|RF13|-|-|-|
+|RF14|-|-|-|
+|RF15|-|-|-|
+|RF16|-|-|-|
+|RF17|-|-|-|
+|RF18|-|-|-|
+
 ## Reflexión
