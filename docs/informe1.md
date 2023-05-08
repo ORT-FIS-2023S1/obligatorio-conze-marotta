@@ -536,3 +536,15 @@ Sin embargo, uno de los mayores desafíos que enfrenté durante este proyecto fu
 En general, mi participación en este proyecto me permitió desarrollar habilidades importantes en el campo de la ingeniería de requisitos y me enseñó la importancia de trabajar en equipo y de ser creativo al abordar desafíos técnicos y de comunicación.
 
 En cuanto a la comunicación y división de trabajo con Rodrigo, me resultó muy cómodo, ya que no es la primera vez que realizamos tareas juntos. Estuvimos en constante comunicación y siempre hubo buena predisposición de ambos para realizar cualquiera de las tareas, sabiendo que ambos trabajamos y en determinados momentos, uno tiene más tiempo que el otro.
+
+### Reflexión Rodrigo Conze
+
+Considero que este trabajo fue fundamental para ver partes del proceso de creación de software que en lo personal no conocía. 
+
+Cómo desarrollador, generalmente estoy involucrado en la etapa de construcción de un sistema, donde me llegan los requerimientos ya definidos para poder implementar, sin tener que intervenir yo en las etapas de definición de requerimientos o diseño. Este primer acercamiento a dichas etapas me sirvió para conectar con cosas que veo diariamente en el trabajo, pero que no conocía el trasfondo de ellas, por ejemplo las User Stories o Use Cases, además de darme un panorama mas general de todo el proceso. Esta tarea hizo además que tuviera que salir de mi zona de confort para realizar una investigación adecuada.
+
+También me hizo dar cuenta de que estas etapas son mas complejas de lo que solía pensar, y de la importancia que estas tienen para la creación de un buen producto. 
+
+Por otro lado, trabajar con Emiliano fue fácil, debido a su responsabilidad y buena predisposición. Reconozco además la importancia del trabajo en equipo, ya que el intercambio con compañeros siempre suma, y este intercambio puede dar puntos de vista que uno no estaba considerando sobre un mismo problema. 
+
+Considero que este trabajo logró darme herramientas que me servirán de aquí en mas, tanto prácticas (como por ejemplo el uso de figma), como teóricas.
