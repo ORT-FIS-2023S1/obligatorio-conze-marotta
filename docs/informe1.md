@@ -103,6 +103,11 @@ Gracias a las entrevistas realizadas y a la documentación revisada, hemos podid
 
 Detectamos dos posibles tipos de usuarios: por un lado los padres, madres o tutores de los niños de las escuelas, de los cuales de aquí en adelante nos referiremos como *tutores*, y por otro lado los administradores de los comedores. 
 
+Los requerimientos tendrán prioridad **Alta, Media o Baja** según la siguiente escala:
+- **Alta:** estos requerimientos deben ser implementados de forma prioritaria, ya que la falta de estos en el sistema afecta su uso
+- **Media:** estos requerimientos son importantes para un correcto funcionamiento del sistema, pero ante su ausencia el sistema sigue pudiendo ser utilizado.
+- **Baja:** estos requerimientos no son importantes para el funcionamiento del sistema, sino que representan funcionalidades adicionales que suman valor al usuario. Pueden ser pospuestos.
+
 #### RF01: Registrar niños en la cuenta
 - **Actor:** Tutor
 - **Descripción:** El sistema debe permitir registrar los niños a cargo del usuario en su cuenta, indicando nombre, apellido, cedula de identidad, clase, y fecha de nacimiento de cada uno, e indicando también condiciones médicas (celiaquía, diabetes, alergias).
@@ -120,7 +125,7 @@ Detectamos dos posibles tipos de usuarios: por un lado los padres, madres o tuto
 
 #### RF04: Cargar billetera virtual
 - **Actor:** Tutor
-- **Descripción:** El sistema debe permitir recargar el saldo de la billetera virtual ingresando el saldo a recargar, tipo de tarjeta (crédito o débito), y número de tarjeta.
+- **Descripción:** El sistema debe permitir recargar el saldo de la billetera virtual ingresando el saldo a recargar, a través de la plataforma de MercadoPago.
 - **Prioridad:** Alta
 
 #### RF05: Agregar menú al carrito
@@ -221,7 +226,7 @@ Detectamos dos posibles tipos de usuarios: por un lado los padres, madres o tuto
 
 ### User stories
 
-### Historia usuario Ana (madre de un niño)
+#### Historia usuario Ana (madre de un niño)
   **Título: Quiero registrar a mi hijo y detallar sus alergias.**
 
 Como madre de un niño, quiero poder registrar a mi hijo en el comedor estudiantil y especificar si tiene celiaquía, diabetes o alguna alergia alimentaria para asegurarme de que reciba comidas seguras y nutritivas.
@@ -234,7 +239,7 @@ Como madre de un niño, quiero poder registrar a mi hijo en el comedor estudiant
 
 ---
 
-### Historia usuario Diego (padre de un niño)
+#### Historia usuario Diego (padre de un niño)
 **Título: Realizar pedidos de menú.**
 
 Como padre de un niño que utiliza la aplicación del comedor escolar, quiero poder realizar pedidos de comida para mi hijo de manera fácil y rápida, para ahorrar tiempo y evitar largas filas en el comedor.
@@ -248,7 +253,7 @@ Como padre de un niño que utiliza la aplicación del comedor escolar, quiero po
 
 ---
 
-### Historia usuario Pedro (administrador del comedor)
+#### Historia usuario Pedro (administrador del comedor)
 **Título: Controlar y administrar los pedidos.**
 
 Como administrador del comedor escolar, quiero poder gestionar las órdenes de comida recibidas a través de la aplicación, para garantizar que se entreguen las comidas adecuadas a los niños y que se cumplan los requisitos de seguridad alimentaria.
@@ -262,7 +267,7 @@ Como administrador del comedor escolar, quiero poder gestionar las órdenes de c
 
 ### Use cases
 
-###  Iniciar sesión en la aplicación del comedor escolar
+####  Iniciar sesión en la aplicación del comedor escolar
 
 **Actor primario:** Padre o tutor legal de un estudiante en la escuela
 
@@ -291,7 +296,7 @@ Como administrador del comedor escolar, quiero poder gestionar las órdenes de c
 
 ---
 
-### Registro de un estudiante con alergias
+#### Registro de un estudiante con alergias
 
 **Actor:** Madre del estudiante
 
@@ -325,7 +330,7 @@ Este caso de uso es importante para garantizar la seguridad de los estudiantes c
 
 ---
 
-### Acceso a información de pedidos y alergias de los estudiantes
+#### Acceso a información de pedidos y alergias de los estudiantes
 
 **Actor:** Administrador del comedor
 
@@ -353,6 +358,44 @@ Descripción: Este caso de uso describe cómo el administrador del comedor escol
 
 4.1 Si el administrador detecta un error en la lista de pedidos o alergias, puede notificar a su responsable a cargo para que este edite la información correspondiente.
 
+### Bocetos de UI
+
+1. Login
+
+![Login](../elicitacion/Bocetos/Login.PNG "Login")
+
+2. Registrarse
+
+![Registrarse](../elicitacion/Bocetos/Registrarse.PNG "Registrarse")
+
+3. Recuperar contraseña
+
+![RecuperarContraseña](../elicitacion/Bocetos/RecuperarContraseña.PNG "Recuperar contraseña")
+
+4. Menú principal
+
+![MenuPrincipal](../elicitacion/Bocetos/MenuPrincipal.PNG "Menú principal")
+
+5. Agregar al carrito
+
+![AgregarAlCarrito](../elicitacion/Bocetos/AgregarAlCarrito.PNG "Agregar al carrito")
+
+6. Mi carrito
+
+![Carrito](../elicitacion/Bocetos/Carrito.PNG "Mi carrito")
+
+7. Menú perfil
+
+![MenuPerfil](../elicitacion/Bocetos/MenuPerfil.PNG "Menú perfil")
+
+8. Mis comensales
+
+![MisComensales](../elicitacion/Bocetos/MisComensales.PNG "Mis comensales")
+
+9. Agregar comensal
+
+![AgregarComensal](../elicitacion/Bocetos/AgregarComensal.PNG "Agregar comensal")
+
 
 ## Validación y verificación
 
@@ -378,24 +421,24 @@ Para cada item vamos a enumerar cada una de las pregutnas que nos hicimos para v
 
 |Nro. Req.|1|2|3|4|5|
 |--------|--|--|--|--|--|
-|RF01|-|-|-|-|-|
-|RF02|-|-|-|-|-|
-|RF03|-|-|-|-|-|
-|RF04|-|-|-|-|-|
-|RF05|-|-|-|-|-|
-|RF06|-|-|-|-|-|
-|RF07|-|-|-|-|-|
-|RF08|-|-|-|-|-|
-|RF09|-|-|-|-|-|
-|RF10|-|-|-|-|-|
-|RF11|-|-|-|-|-|
-|RF12|-|-|-|-|-|
-|RF13|-|-|-|-|-|
-|RF14|-|-|-|-|-|
-|RF15|-|-|-|-|-|
-|RF16|-|-|-|-|-|
-|RF17|-|-|-|-|-|
-|RF18|-|-|-|-|-|
+|RF01|Si|Si|Si|Si|Si|
+|RF02|Si|Si|Si|Si|Si|
+|RF03|Si|Si|Si|Si|Si|
+|RF04|Si|Si|Si|Si|Si|
+|RF05|Si|Si|Si|Si|Si|
+|RF06|Si|Si|Si|Si|Si|
+|RF07|Si|Si|Si|Si|Si|
+|RF08|Si|Si|Si|Si|Si|
+|RF09|Si|Si|Si|Si|Si|
+|RF10|Si|Si|Si|Si|Si|
+|RF11|Si|Si|Si|Si|Si|
+|RF12|Si|Si|Si|Si|Si|
+|RF13|Si|Si|Si|Si|Si|
+|RF14|Si|Si|Si|Si|Si|
+|RF15|Si|Si|Si|Si|Si|
+|RF16|Si|Si|Si|Si|Si|
+|RF17|Si|Si|Si|Si|Si|
+|RF18|Si|Si|Si|Si|Si|
 
 **Verificabilidad y no ambigüedad**
 1. ¿Tiene cada requerimiento una única interpretación?
@@ -403,24 +446,24 @@ Para cada item vamos a enumerar cada una de las pregutnas que nos hicimos para v
 
 |Nro. Req.|1|2|
 |--------|--|--|
-|RF01|-|-|
-|RF02|-|-|
-|RF03|-|-|
-|RF04|-|-|
-|RF05|-|-|
-|RF06|-|-|
-|RF07|-|-|
-|RF08|-|-|
-|RF09|-|-|
-|RF10|-|-|
-|RF11|-|-|
-|RF12|-|-|
-|RF13|-|-|
-|RF14|-|-|
-|RF15|-|-|
-|RF16|-|-|
-|RF17|-|-|
-|RF18|-|-|
+|RF01|Si|Si|
+|RF02|Si|Si|
+|RF03|Si|Si|
+|RF04|Si|Si|
+|RF05|Si|Si|
+|RF06|Si|Si|
+|RF07|Si|Si|
+|RF08|Si|Si|
+|RF09|Si|Si|
+|RF10|Si|Si|
+|RF11|Si|Si|
+|RF12|Si|Si|
+|RF13|Si|Si|
+|RF14|Si|Si|
+|RF15|Si|Si|
+|RF16|Si|Si|
+|RF17|Si|Si|
+|RF18|Si|Si|
 
 **Correctitud y consistencia**
 1. ¿Están los requerimientos escritos en forma consistente y a un nivel de detalle adecuado?
@@ -430,50 +473,49 @@ Para cada item vamos a enumerar cada una de las pregutnas que nos hicimos para v
 
 |Nro. Req.|1|2|3|4|
 |--------|--|--|--|--|
-|RF01|-|-|-|-|
-|RF02|-|-|-|-|
-|RF03|-|-|-|-|
-|RF04|-|-|-|-|
-|RF05|-|-|-|-|
-|RF06|-|-|-|-|
-|RF07|-|-|-|-|
-|RF08|-|-|-|-|
-|RF09|-|-|-|-|
-|RF10|-|-|-|-|
-|RF11|-|-|-|-|
-|RF12|-|-|-|-|
-|RF13|-|-|-|-|
-|RF14|-|-|-|-|
-|RF15|-|-|-|-|
-|RF16|-|-|-|-|
-|RF17|-|-|-|-|
-|RF18|-|-|-|-|
+|RF01|Si|No|Si|Si|
+|RF02|Si|No|Si|Si|
+|RF03|Si|No|Si|Si|
+|RF04|Si|No|Si|Si|
+|RF05|Si|No|Si|Si|
+|RF06|Si|No|Si|Si|
+|RF07|Si|No|Si|Si|
+|RF08|Si|No|Si|Si|
+|RF09|Si|No|Si|Si|
+|RF10|Si|No|Si|Si|
+|RF11|Si|No|Si|Si|
+|RF12|Si|No|Si|Si|
+|RF13|Si|No|Si|Si|
+|RF14|Si|No|Si|Si|
+|RF15|Si|No|Si|Si|
+|RF16|Si|No|Si|Si|
+|RF17|Si|No|Si|Si|
+|RF18|Si|No|Si|Si|
 
 **Trazabilidad**
 1. ¿Puede cada requerimiento ser identificado correctamente y en forma única?
 2. ¿Se referencian correctamente los requerimientos entre si?
-3. ¿Puede cada requerimiento ser referenciado hasta su origen (alguna necesidad de
-los stakeholders)?
+3. ¿Puede cada requerimiento ser referenciado hasta su origen (alguna necesidad de los stakeholders)?
 
 |Nro. Req.|1|2|3|
 |--------|--|--|--|
-|RF01|-|-|-|
-|RF02|-|-|-|
-|RF03|-|-|-|
-|RF04|-|-|-|
-|RF05|-|-|-|
-|RF06|-|-|-|
-|RF07|-|-|-|
-|RF08|-|-|-|
-|RF09|-|-|-|
-|RF10|-|-|-|
-|RF11|-|-|-|
-|RF12|-|-|-|
-|RF13|-|-|-|
-|RF14|-|-|-|
-|RF15|-|-|-|
-|RF16|-|-|-|
-|RF17|-|-|-|
-|RF18|-|-|-|
+|RF01|Si|Si|Si|
+|RF02|Si|Si|Si|
+|RF03|Si|Si|Si|
+|RF04|Si|Si|Si|
+|RF05|Si|Si|Si|
+|RF06|Si|Si|Si|
+|RF07|Si|Si|Si|
+|RF08|Si|Si|Si|
+|RF09|Si|Si|Si|
+|RF10|Si|Si|Si|
+|RF11|Si|Si|Si|
+|RF12|Si|Si|Si|
+|RF13|Si|Si|Si|
+|RF14|Si|Si|Si|
+|RF15|Si|Si|No|
+|RF16|Si|Si|No|
+|RF17|Si|Si|Si|
+|RF18|Si|Si|No|
 
 ## Reflexión
