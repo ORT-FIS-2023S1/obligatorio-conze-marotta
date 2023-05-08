@@ -403,6 +403,11 @@ Descripción: Este caso de uso describe cómo el administrador del comedor escol
 
 Una vez que se crearon los prototipos y la interfaz de la aplicación, se mostró a dos de los posibles usuarios que habían sido entrevistados anteriormente. En general, los usuarios quedaron satisfechos con la aplicación, ya que cumple con sus expectativas en términos de simpleza e interfaz amigable. Los usuarios pudieron navegar fácilmente por la aplicación y si bien el prototipos no es 100% funcional, pudieron navegar por las ventanas sin ningún problema, lo que demuestra que el diseño de la interfaz se ajustaba a sus necesidades. En resumen, la validación de los usuarios después de la creación de la interfaz y los bocetos confirma que se logró un diseño efectivo y funcional para la aplicación.
 
+**Prototipo interactivo:**
+En este link, podrán encontrar y probar el prototipo interactivo que hicimos de la aplicación:
+
+[Link al prototipo](https://www.figma.com/proto/Ezo5ycWJvXvz6ON7Sbzthj/Prototipo-App-Comedor-Escolar?type=design&node-id=54232-40455&scaling=scale-down&page-id=54098%3A38306&starting-point-node-id=54098%3A38333)
+
 ### Verificación
  Para realizar la verificación, vamos a dividirlo en varios items:
  1. Completitud
@@ -519,3 +524,15 @@ Para cada item vamos a enumerar cada una de las pregutnas que nos hicimos para v
 |RF18|Si|Si|No|
 
 ## Reflexión
+
+### Reflexión Emiliano Marotta
+
+Durante mi participación en el proyecto de desarrollo de una aplicación para un comedor estudiantil, tuve la oportunidad de poner en práctica diferentes habilidades y herramientas. Aprendí a utilizar Git como herramienta de control de versiones y gestión de proyectos en equipo. Si bien habiamos hecho ejercicios de práctica, nunca lo había usando en un proyecto real de trabajo en equipo.
+
+Conocí y aprendí a usar Figma para crear prototipos interactivos de la aplicación. Me pareció una herramienta muy interesante y sencilla de utilizar
+
+Sin embargo, uno de los mayores desafíos que enfrenté durante este proyecto fue la identificación de los requerimientos de la aplicación. No me pareció sencillo aplicar algunos de los métodos de elicitación, como la ingeniería inversa, ya que para utilizar otras aplicaciones similares, había que contar con determinada autorización de los colegios. Para relizar las entrevistas, y orientar las pregutnas a la identificación del problema, no me reusltó sencillo. Aunque esto me hizo sentir incómodo al principio, aprendí a ser creativo y a utilizar diferentes enfoques para obtener la información necesaria.
+
+En general, mi participación en este proyecto me permitió desarrollar habilidades importantes en el campo de la ingeniería de requisitos y me enseñó la importancia de trabajar en equipo y de ser creativo al abordar desafíos técnicos y de comunicación.
+
+En cuanto a la comunicación y división de trabajo con Rodrigo, me resultó muy cómodo, ya que no es la primera vez que realizamos tareas juntos. Estuvimos en constante comunicación y siempre hubo buena predisposición de ambos para realizar cualquiera de las tareas, sabiendo que ambos trabajamos y en determinados momentos, uno tiene más tiempo que el otro.
