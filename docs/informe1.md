@@ -268,6 +268,7 @@ Como administrador del comedor escolar, quiero poder gestionar las órdenes de c
 ### Use cases
 
 ####  Iniciar sesión en la aplicación del comedor escolar
+**ID: UC01**
 
 **Actor primario:** Padre o tutor legal de un estudiante en la escuela
 
@@ -297,6 +298,7 @@ Como administrador del comedor escolar, quiero poder gestionar las órdenes de c
 ---
 
 #### Registro de un estudiante con alergias
+**ID: UC02**
 
 **Actor:** Madre del estudiante
 
@@ -331,6 +333,7 @@ Este caso de uso es importante para garantizar la seguridad de los estudiantes c
 ---
 
 #### Acceso a información de pedidos y alergias de los estudiantes
+**ID: UC03**
 
 **Actor:** Administrador del comedor
 
