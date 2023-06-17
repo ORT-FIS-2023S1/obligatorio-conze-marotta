@@ -1,120 +1,182 @@
 <!DOCTYPE html>
-<html lang="es">
+<html>
 
 <head>
-    <title>Menú inferior con Navbar de Bootstrap</title>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.0.1/css/bootstrap.min.css">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.3.0/font/bootstrap-icons.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-    <style>
-        .navbar {
-            position: fixed;
-            bottom: 0;
-            left: 0;
-            width: 100%;
-            height: 80px;
-            background-color: #1B5E20;
-        }
+  <title>Menú inferior con Navbar de Bootstrap</title>
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.0.1/css/bootstrap.min.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
+  <link rel="stylesheet" href="https://code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <style>
+    #datepicker {
+      width: 200px;
+      margin: 20px auto;
+    }
 
-        .navbar .nav-link {
-            text-align: center;
-            font-size: 16px;
-            color: white;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            /* width: 33.33%; */
-            line-height: 80px;
-            text-decoration: none;
-            /* Quitar subrayado de los enlaces */
-            transition: text-shadow 0.3s;
-            /* Agregar una transición al sombreado del texto */
-        }
+    .navbar {
+      position: fixed;
+      bottom: 0;
+      left: 0;
+      width: 100%;
+      height: 80px;
+      background-color: #1B5E20;
+    }
 
-        .navbar .nav-link:hover {
-            color: white !important;
-        }
+    .navbar .nav-link {
+      text-align: center;
+      font-size: 16px;
+      color: white;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      /* width: 33.33%; */
+      line-height: 80px;
+      text-decoration: none;
+      /* Quitar subrayado de los enlaces */
+      transition: text-shadow 0.3s;
+      /* Agregar una transición al sombreado del texto */
+    }
 
-        .navbar-light .navbar-nav .nav-link {
-            color: white;
-        }
+    .navbar .nav-link:hover {
+      color: white !important;
+    }
 
-        .navbar .nav-link.active,
-        .navbar .nav-link:focus,
-        .navbar .nav-link:visited {
-            /*    text-shadow: 2px 2px 4px rgba(255, 255, 255, 0.877); /* Agregar sombreado al texto al pasar el cursor */
-            color: rgb(255, 255, 255) !important;
-            /* Cambiar color del texto a blanco */
-            background-color: #003a18;
-        }
+    .navbar-light .navbar-nav .nav-link {
+      color: white;
+    }
 
-        .badge {
-            background-color: red !important;
-        }
-    </style>
+    .navbar .nav-link.active,
+    .navbar .nav-link:focus,
+    .navbar .nav-link:visited {
+      /*    text-shadow: 2px 2px 4px rgba(255, 255, 255, 0.877); /* Agregar sombreado al texto al pasar el cursor */
+      color: rgb(255, 255, 255) !important;
+      /* Cambiar color del texto a blanco */
+      background-color: #003a18;
+    }
+
+    .badge {
+      background-color: red !important;
+    }
+
+    .vista {
+      display: none;
+    }
+  </style>
 </head>
 
 <body>
-    <nav class="navbar navbar-expand navbar-light">
-        <ul class="navbar-nav w-100 justify-content-center">
-            <li class="nav-item flex-fill">
-                <a class="nav-link active" href="#" onclick="toggleActive(event)"><i
-                        class="bi bi-person-circle"></i>&nbspPerfil</a>
-            </li>
-            <li class="nav-item flex-fill">
-                <a class="nav-link" href="#" onclick="toggleActive(event)"><i class="bi bi-calendar2"></i>&nbspMenú</a>
-            </li>
-            <li class="nav-item flex-fill">
-                <a class="nav-link" href="#" onclick="toggleActive(event)"><i
-                        class="bi bi-bell"></i>&nbspNotificaciones&nbsp
-                    <span class="badge text-bg-secondary">3</span></a>
-            </li>
-        </ul>
+  <header>
+    <nav class="navbar fixed-bottom navbar-expand navbar-light">
+      <ul class="navbar-nav w-100 justify-content-center">
+        <li class="nav-item flex-fill">
+          <a class="nav-link active" href="#" onclick="mostrarVista('perfil'); toggleActive(event)"><i
+              class="bi bi-person-circle"></i>&nbspPerfil</a>
+        </li>
+        <li class="nav-item flex-fill">
+          <a class="nav-link" href="#" onclick="mostrarVista('menu'); toggleActive(event)"><i
+              class="bi bi-calendar2"></i>&nbspMenú</a>
+        </li>
+        <li class="nav-item flex-fill">
+          <a class="nav-link" href="#" onclick="mostrarVista('notificaciones'); toggleActive(event)"><i
+              class="bi bi-bell"></i>&nbspNotificaciones&nbsp
+            <span class="badge text-bg-secondary">3</span></a>
+        </li>
+      </ul>
     </nav>
-
+  </header>
+  <main>
     <div class="container">
-        <div style="display: flex; flex-direction: column;">
-            <label for="nombreMenu">Nombre: </label>
-            <input type="text" id="nombreMenu">
-            <label for="descMenu">Descripcion: </label>
-            <input type="text" id="descMenu">
-            <label for="aptoCeliacos">Apto para celiacos: </label>
-            <input type="checkbox" id="aptoCeliacos">
-            <label for="aptoDiabeticos">Apto para diabeticos: </label>
-            <input type="checkbox" id="aptoDiabeticos">
-            <label for="imagen">Imagen </label>
-            <input type="file" id="imagen">
+      <div id="perfil" class="vista">
+        <div class="container">
+          <div class="card mb-3" style="max-width: 540px;">
+            <div class="row g-0">
+              <div class="col-md-4">
+                <img src="foto_perfil.png" class="img-fluid rounded-start" alt="...">
+              </div>
+              <div class="col-md-8">
+                <div class="card-body">
+                  <h5 class="card-title">Juan Pérez</h5>
+                  <p class="card-text"><small class="text-body-secondary">Fecha de registro: 01/01/2023</small></p>
+                </div>
+              </div>
+            </div>
+          </div>
         </div>
-        <button id="btnPublicarMenu">Publicar menu</button>
-        <button id="btnObtenerMenus">Obtener menus</button>
+        <div class="container">
+          <!--  <img src="foto_perfil.png" alt="Foto de perfil"> -->
+          <!-- <h1>Juan Pérez</h1> -->
+          <!-- <p>Fecha de registro: 01/01/2023</p> -->
 
-        <div id="contenedorDeImagenes">
-            
+          <div class="mt-4">
+            <button class="btn btn-primary me-2"><i class="bi bi-wallet2"></i> Saldo </button>
+            <button class="btn btn-primary me-2"><i class="bi bi-gem"></i> Puntos </button>
+            <button class="btn btn-primary me-2"><i class="bi bi-ticket"></i> Cupones </button>
+            <button class="btn btn-primary me-2"><i class="bi bi-wallet-fill"></i> Cargar saldo</button>
+          </div>
+
+          <div class="mt-4">
+            <a href="#">Mis comensales</a><br>
+            <a href="#">Historial de pedidos</a><br>
+            <a href="#">Medios de pago</a><br>
+            <a href="#">Centro de ayuda</a><br>
+            <a href="#">Configuración de la cuenta</a><br>
+          </div>
         </div>
-    </container>
-    
+      </div>
 
-    <script src="./script.js"></script>
-    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
-        integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
-        crossorigin="anonymous"></script>
-    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.14.7/dist/umd/popper.min.js"
-        integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
-        crossorigin="anonymous"></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/js/bootstrap.min.js"
-        integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
-        crossorigin="anonymous"></script>
-    <script>
-        function toggleActive(event) {
-            var links = document.querySelectorAll('.navbar .nav-link');
-            for (var i = 0; i < links.length; i++) {
-                links[i].classList.remove('active');
-            }
-            event.target.classList.add('active');
-        }
-    </script>
+      <div id="menu" class="vista">
+        <div class="container">
+          <div id="datepicker"></div>
+          <div class="card mb-3">
+            <img src="menu1.png" class="card-img-top" alt="...">
+            <div class="card-body">
+              <h5 class="card-title">Card title</h5>
+              <p class="card-text">This is a wider card with supporting text below as a natural lead-in to
+                additional content. This content is a little bit longer.</p>
+              <p class="card-text"><small class="text-body-secondary">Last updated 3 mins ago</small></p>
+            </div>
+          </div>
+          <div class="card mb-3">
+            <img src="menu2.png" class="card-img-top" alt="...">
+            <div class="card-body">
+              <h5 class="card-title">Card title</h5>
+              <p class="card-text">This is a wider card with supporting text below as a natural lead-in to
+                additional content. This content is a little bit longer.</p>
+              <p class="card-text"><small class="text-body-secondary">Last updated 3 mins ago</small></p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    </div>
+    <div id="notificaciones" class="vista">
+      <div class="container">
+        <!-- Contenido de la vista 2 -->
+        <h1>Notificaciones sin leer</h1>
+        <p>Contenido de la vista 2.</p>
+      </div>
+    </div>
+
+    </div>
+  </main>
+  <script src="script.js"></script>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.9.0/js/bootstrap-datepicker.js"></script>
+  <script type="text/javascript">
+    $(document).ready(function () {
+      $('#datepicker').datepicker();
+    });
+  </script>
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+  <script>
+    $(function () {
+      $("#datepicker").datepicker();
+    });
+  </script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"></script>
 </body>
 
 </html>

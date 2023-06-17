@@ -41,4 +41,23 @@ document.getElementById("btnObtenerMenus").onclick = () =>{
         console.log(res);
     })
 }
+function mostrarVista(id) {
+    // Oculta todas las vistas
+    var vistas = document.getElementsByClassName('vista');
+    for (var i = 0; i < vistas.length; i++) {
+        vistas[i].style.display = 'none';
+    }
+
+    // Muestra la vista correspondiente al ID proporcionado
+    var vista = document.getElementById(id);
+    vista.style.display = 'block';
+}
+function toggleActive(event) {
+    const links = document.querySelectorAll('.navbar .nav-link');
+    for (let i = 0; i < links.length; i++) {
+      links[i].classList.remove('active');
+    }
+    event.target.classList.add('active');
+  }
+  
 
