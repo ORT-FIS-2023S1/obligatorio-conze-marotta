@@ -1,4 +1,42 @@
-document.getElementById("btnPublicarMenu").onclick = () =>{
+window.addEventListener("load", inicio);
+
+function inicio(){
+    // document.getElementById("btnObtenerMenus").addEventListener("click", cargarMenus);
+    // document.getElementById("btnPublicarMenu").addEventListener("click", publicarMenu);
+    // cargarMenus();
+    mostrarVista('menu');
+}
+
+function cargarMenus(){
+    fetch('/obtenerMenus', {
+        method: 'GET',
+        headers: {
+            'Content-Type': 'application/json'
+        },
+    }).then(res => {
+        return res.json();
+    }).then(res=>{
+        const contenedor = document.getElementById("contenedorMenus");
+        contenedor.innerHTML = "";
+        for(const menu of res){
+            const card = document.createElement("div");
+            card.innerHTML = '<div class="card m-3" style="width: 18rem;">' + 
+            '<img src="./img/ImagenPrueba.png" class="card-img-top" alt="...">' +
+            '<div class="card-body">' +
+            '<h5 class="card-title">' + menu.nombre + "</h5>" +
+            '<p class="card-text">' + menu.descipcion +'</p>' +
+            '</div></div>';
+            contenedor.appendChild(card);
+        }
+        
+        console.log(res);
+    }).catch(err=>{
+        console.log("Error obteniendo menús");
+        console.log(err);
+    })
+}
+
+function publicarMenu(){
     const nombre = document.getElementById("nombreMenu").value;
     const desc = document.getElementById("descMenu").value;
     const cel = document.getElementById("aptoCeliacos").checked;
@@ -12,9 +50,6 @@ document.getElementById("btnPublicarMenu").onclick = () =>{
         ingredientes: [],
         imagen: null
     }
-    console.log(menu);
-
-    
     fetch('/publicarMenu', {
         method: 'POST',
         headers: {
@@ -22,25 +57,14 @@ document.getElementById("btnPublicarMenu").onclick = () =>{
         },
         body: JSON.stringify(menu)
     }).then(x=>{
-        console.log("ENVIADO!");
-        
+        console.log("Menú publicado");
+        console.log(menu);
     }).catch(err=>{
-        console.log("ERROR!");
+        console.log("Error publicando menú");
+        console.log(err);
     })
 }
 
-document.getElementById("btnObtenerMenus").onclick = () =>{
-    fetch('/obtenerMenus',{
-        method: 'GET',
-        headers: {
-            'Content-Type': 'application/json'
-        }
-    }).then(res => {
-        return res.json()
-    }).then(res => {
-        console.log(res);
-    })
-}
 function mostrarVista(id) {
     // Oculta todas las vistas
     var vistas = document.getElementsByClassName('vista');
@@ -52,12 +76,13 @@ function mostrarVista(id) {
     var vista = document.getElementById(id);
     vista.style.display = 'block';
 }
+
 function toggleActive(event) {
     const links = document.querySelectorAll('.navbar .nav-link');
     for (let i = 0; i < links.length; i++) {
       links[i].classList.remove('active');
     }
     event.target.classList.add('active');
-  }
+}
   
 

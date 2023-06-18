@@ -20,14 +20,7 @@ app.get('/', (req, res)=>{
     res.render('index.html');
 });
 
-app.get('/about', (req, res)=>{
-    res.send('About me endpoint!');
-})
-
-app.get('/info', (req, res)=>{
-    res.send('Info endpoint!');
-})
-
 app.listen(port, ()=>{
-    console.log("Running on port ", port);
+    const url = "http://localhost:" + port;
+    console.log("Running on",url);
 });
