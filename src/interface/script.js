@@ -1,9 +1,9 @@
 window.addEventListener("load", inicio);
 
 function inicio(){
-    // document.getElementById("btnObtenerMenus").addEventListener("click", cargarMenus);
-    // document.getElementById("btnPublicarMenu").addEventListener("click", publicarMenu);
-    // cargarMenus();
+    //document.getElementById("btnObtenerMenus").addEventListener("click", cargarMenus);
+    document.getElementById("btnPublicarMenu").addEventListener("click", publicarMenu);
+    cargarMenus();
     mostrarVista('menu');
 }
 
@@ -41,7 +41,7 @@ function publicarMenu(){
     const desc = document.getElementById("descMenu").value;
     const cel = document.getElementById("aptoCeliacos").checked;
     const dia = document.getElementById("aptoDiabeticos").checked;
-    const img = document.getElementById("imagen").files[0];
+    //const img = document.getElementById("imagen").files[0];
     const menu = {
         nombre: nombre,
         descipcion: desc,
@@ -59,9 +59,12 @@ function publicarMenu(){
     }).then(x=>{
         console.log("Menú publicado");
         console.log(menu);
+        $("#modalPublicarMenu").modal("hide");
+        cargarMenus();
     }).catch(err=>{
         console.log("Error publicando menú");
         console.log(err);
+        $("#modalPublicarMenu").modal("hide");
     })
 }
 

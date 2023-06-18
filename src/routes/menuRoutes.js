@@ -6,6 +6,7 @@ router.post('/publicarMenu', (req, res)=>{
     const menu = req.body;
     sistema.agregarMenu(menu);
     console.log(menu);
+    res.send("Publicado")
 });
 
 router.get('/obtenerMenus', (req, res)=>{

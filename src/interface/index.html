@@ -99,6 +99,7 @@
   </header>
   <main>
     <div class="container">
+
       <div id="perfil" class="vista">
         <div class="container">
           <div class="card mb-3" style="max-width: 540px;">
@@ -119,6 +120,34 @@
           <!--  <img src="foto_perfil.png" alt="Foto de perfil"> -->
           <!-- <h1>Juan Pérez</h1> -->
           <!-- <p>Fecha de registro: 01/01/2023</p> -->
+          <div class="modal fade" id="modalPublicarMenu" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                  <div class="modal-header">
+                    <h1 class="modal-title fs-5" id="staticBackdropLabel">Publicar menu</h1>
+                    <button type="button" class="btn-close" data-dismiss="modal" aria-label="Close"></button>
+                  </div>
+                  <div class="modal-body">
+                    <div style="display: flex; flex-direction: column;">
+                        <label for="nombreMenu">Nombre: </label>
+                        <input type="text" id="nombreMenu">
+                        <label for="descMenu">Descripcion: </label>
+                        <input type="text" id="descMenu">
+                        <label for="aptoCeliacos">Apto para celiacos: </label>
+                        <input type="checkbox" id="aptoCeliacos">
+                        <label for="aptoDiabeticos">Apto para diabeticos: </label>
+                        <input type="checkbox" id="aptoDiabeticos">
+                        <!--label for="imagen">Imagen </label>
+                        <input type="file" id="imagen"-->
+                    </div>
+                  </div>
+                  <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancelar</button>
+                    <button type="button" class="btn btn-primary" id="btnPublicarMenu">Publicar</button>
+                  </div>
+                </div>
+              </div>
+          </div>
 
           <div class="mt-4">
             <button class="btn btn-primary me-2"><i class="bi bi-wallet2"></i> Saldo </button>
@@ -133,6 +162,7 @@
             <a href="#">Medios de pago</a><br>
             <a href="#">Centro de ayuda</a><br>
             <a href="#">Configuración de la cuenta</a><br>
+            <a href="#" data-toggle="modal" data-target="#modalPublicarMenu">Publicar menu</a><br>
           </div>
         </div>
       </div>
@@ -179,6 +209,15 @@
     </div>
   </main>
   <script src="script.js"></script>
+  <!--script type="text/javascript">
+    $(document).ready(function() {
+  $('a[data-toggle="modal"]').click(function(e) {
+    e.preventDefault();
+    var targetModal = $(this).data('target');
+    $(targetModal).modal('show');
+  });
+});
+  </script-->
 
   <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.9.0/js/bootstrap-datepicker.js"></script>
   <script type="text/javascript">
