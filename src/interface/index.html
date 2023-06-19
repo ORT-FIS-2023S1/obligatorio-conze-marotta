@@ -72,27 +72,31 @@
                 <button type="button" class="btn-close" data-dismiss="modal" aria-label="Close"></button>
               </div>
               <div class="modal-body">
-                <div style="display: flex; flex-direction: column;">
-                  <label for="nombreMenu">Nombre: </label>
-                  <input type="text" id="nombreMenu">
-                  <label for="descMenu">Descripción: </label>
-                  <input type="text" id="descMenu">
-                  <label for="ingredientesMenu">Ingredientes: </label>
-                  <input type="text" id="ingredientesMenu">
-                  <label for="precioMenu">Precio: </label>
-                  <input type="number" id="precioMenu">
-                  <label for="aptoCeliacos">Apto para celíacos: </label>
-                  <input type="checkbox" id="aptoCeliacos">
-                  <label for="aptoDiabeticos">Apto para diabéticos: </label>
-                  <input type="checkbox" id="aptoDiabeticos">
-                  <!--label for="imagen">Imagen </label>
-                        <input type="file" id="imagen"-->
+                <div>
+                  <form style="display: flex; flex-direction: column;" class="form">
+                    <label for="nombreMenu">Nombre: </label>
+                    <input type="text" id="nombreMenu" required>
+                    <label for="descMenu">Descripción: </label>
+                    <input type="text" id="descMenu" required>
+                    <label for="ingredientesMenu">Ingredientes: </label>
+                    <input type="text" id="ingredientesMenu" required>
+                    <label for="precioMenu">Precio: </label>
+                    <input type="number" id="precioMenu" required>
+                    <label for="aptoCeliacos">Apto para celíacos: </label>
+                    <input type="checkbox" id="aptoCeliacos">
+                    <label for="aptoDiabeticos">Apto para diabéticos: </label>
+                    <input type="checkbox" id="aptoDiabeticos">
+                    <!--label for="imagen">Imagen </label>
+                          <input type="file" id="imagen"-->
+                    <div class="modal-footer">
+                      <button type="button" class="btn btn-secondary rounded" data-dismiss="modal">Cancelar</button>
+                      <button type="submit" class="btn btn-primary rounded" id="btnPublicarMenu">Publicar</button>
+                    </div>
+                  </form>
+
                 </div>
               </div>
-              <div class="modal-footer">
-                <button type="button" class="btn btn-secondary rounded" data-dismiss="modal">Cancelar</button>
-                <button type="button" class="btn btn-primary rounded" id="btnPublicarMenu">Publicar</button>
-              </div>
+
             </div>
           </div>
         </div>

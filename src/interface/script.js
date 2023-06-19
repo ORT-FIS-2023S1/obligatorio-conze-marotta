@@ -133,42 +133,43 @@ function publicarMenu() {
   const precio = document.getElementById('precioMenu').value;
   const ingredientes = document.getElementById('ingredientesMenu').value;
 
-  document.getElementById('nombreMenu').value = '';
-  document.getElementById('descMenu').value = '';
-  document.getElementById('aptoCeliacos').checked = false;
-  document.getElementById('aptoDiabeticos').checked = false;
-  document.getElementById('precioMenu').value = '';
-  document.getElementById('ingredientesMenu').value = '';
-
-  const menu = {
-    nombre: nombre,
-    descripcion: desc,
-    aptoParaCeliacos: cel,
-    aptoParaDiabeticos: dia,
-    ingredientes: ingredientes,
-    imagen: null,
-    precio: precio,
-  };
-  fetch('/publicarMenu', {
-    method: 'POST',
-    headers: {
-      'Content-Type': 'application/json',
-    },
-    body: JSON.stringify(menu),
-  }).then((x) => {
-    return x.json();
-  }).then((res) => {
-    $('#modalPublicarMenu').modal('hide');
-    if (res.success) {
-      mostrarMensaje('Exito', res.msg);
-    } else {
-      mostrarMensaje('Error', res.msg);
-    }
-    cargarMenus();
-  }).catch((err) => {
-    $('#modalPublicarMenu').modal('hide');
-    mostrarMensaje('Error', 'Error publicando menú');
-  });
+  if (nombre != '' && desc != '' && precio != '' && ingredientes != '') {
+    document.getElementById('nombreMenu').value = '';
+    document.getElementById('descMenu').value = '';
+    document.getElementById('aptoCeliacos').checked = false;
+    document.getElementById('aptoDiabeticos').checked = false;
+    document.getElementById('precioMenu').value = '';
+    document.getElementById('ingredientesMenu').value = '';
+    const menu = {
+      nombre: nombre,
+      descripcion: desc,
+      aptoParaCeliacos: cel,
+      aptoParaDiabeticos: dia,
+      ingredientes: ingredientes,
+      imagen: null,
+      precio: precio,
+    };
+    fetch('/publicarMenu', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify(menu),
+    }).then((x) => {
+      return x.json();
+    }).then((res) => {
+      $('#modalPublicarMenu').modal('hide');
+      if (res.success) {
+        mostrarMensaje('Exito', res.msg);
+      } else {
+        mostrarMensaje('Error', res.msg);
+      }
+      cargarMenus();
+    }).catch((err) => {
+      $('#modalPublicarMenu').modal('hide');
+      mostrarMensaje('Error', 'Error publicando menú');
+    });
+  }
 }
 
 /**
