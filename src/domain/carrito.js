@@ -13,6 +13,10 @@ class Carrito{
         this.menuPedidos = this.menuPedidos.filter(x=>x.menu.nombre == nombre);
     }
 
+    obtenerMenus(){
+        return this.menuPedidos;
+    }
+
     obtenerUsuarioCarrito(){
         return this.usuario;
     }

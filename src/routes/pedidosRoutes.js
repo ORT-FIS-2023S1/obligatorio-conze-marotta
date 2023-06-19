@@ -7,10 +7,10 @@ router.get('/probandoPedido', (req, res)=>{
     res.send('HOLA, FUNCIONO EL ROUTE DE PEDIDO');
 });
 
-router.post('/realizarPedido', (req, res)=>{
+router.post('/realizarPedido/:id', (req, res)=>{
     const pedido = req.body;
-    sistema.agregarPedido(pedido);
-    res.send("Pedido realizado: " + pedido);
+    sistema.realizarPedido(req.params.id);
+    res.send("Pedido realizado");
 });
 
 router.get('/listadoPedidos', (req, res)=>{
@@ -23,5 +23,9 @@ router.get('/historialPedidos/:id', (req, res) => {
     res.send(listaPedidos);
 });
 
+router.get('/obtenerCarrito/:id', (req, res) => {
+    const carrito = sistema.obtenerCarritoPorIdUsuario(req.params.id);
+    res.send(carrito);
+});
 
 module.exports = router;

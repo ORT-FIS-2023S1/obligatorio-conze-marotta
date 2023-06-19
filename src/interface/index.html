@@ -173,8 +173,43 @@
 
       <div id="menu" class="vista">
         <div class="container">
+
+          <div class="modal fade" id="modalCarrito" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                  <div class="modal-header">
+                    <h1 class="modal-title fs-5" id="staticBackdropLabel">Mi carrito</h1>
+                    <button type="button" class="btn-close" data-dismiss="modal" aria-label="Close"></button>
+                  </div>
+                  <div class="modal-body">
+                    <div style="display: flex; flex-direction: column;">
+                      <table class="table">
+                        <thead>
+                          <tr>
+                            <th scope="col">Menu</th>
+                            <th scope="col">Cantidad</th>
+                            <th scope="col">Precio</th>
+                          </tr>
+                        </thead>
+                        <tbody id="contenedorMenusCarrito">
+                          
+                        </tbody>
+                      </table>
+                      <div class="text-center">
+                        <p id="idPrecioTotal" class="fw-bolder"></p>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancelar</button>
+                    <button type="button" class="btn btn-primary" id="btnRealizarPedido">Realizar pedido</button>
+                  </div>
+                </div>
+              </div>
+          </div>
+
           <div id="datepicker"></div>
-          <div id="contenedorMenus">
+          <div id="contenedorMenus" class="justify-content-center">
             <div class="card mb-3">
                 <img src="menu1.png" class="card-img-top" alt="...">
                 <div class="card-body">
@@ -194,7 +229,7 @@
                 </div>
               </div>
           </div>
-          <button class="floating-button rounded-circle btn-lg btn-secondary">
+          <button class="floating-button rounded-circle btn-lg btn-secondary" data-toggle="modal" data-target="#modalCarrito">
             <i class="bi bi-cart-fill "></i>
           </button>
           

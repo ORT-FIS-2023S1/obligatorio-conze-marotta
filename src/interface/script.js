@@ -3,9 +3,55 @@ window.addEventListener("load", inicio);
 function inicio(){
     //document.getElementById("btnObtenerMenus").addEventListener("click", cargarMenus);
     document.getElementById("btnPublicarMenu").addEventListener("click", publicarMenu);
+    document.getElementById("btnRealizarPedido").addEventListener("click", realizarPedido);
+    
     cargarMenus();
     cargarPedidos();
+    cargarCarrito();
     mostrarVista('menu');
+}
+
+function mostrarVista(id) {
+    // Oculta todas las vistas
+    var vistas = document.getElementsByClassName('vista');
+    for (var i = 0; i < vistas.length; i++) {
+        vistas[i].style.display = 'none';
+    }
+
+    // Muestra la vista correspondiente al ID proporcionado
+    var vista = document.getElementById(id);
+    vista.style.display = 'block';
+}
+
+function toggleActive(event) {
+    const links = document.querySelectorAll('.navbar .nav-link');
+    for (let i = 0; i < links.length; i++) {
+      links[i].classList.remove('active');
+    }
+    event.target.classList.add('active');
+}
+
+function cargarCarrito(){
+    fetch('/obtenerCarrito/1', {
+        method: 'GET',
+        headers: {
+            'Content-Type': 'application/json'
+        },
+    }).then(res=>{
+        return res.json();
+    }).then(res=>{
+        const contenedor = document.getElementById("contenedorMenusCarrito");
+        contenedor.innerHTML = '';
+        let precioTotal = 0;
+        for(const menu of res.menuPedidos){
+            const row = document.createElement("tr");
+            row.innerHTML = '<td>' + menu.menu.nombre + '</td><td>' + menu.cantidad + '</td><td>$'+ menu.menu.precio * menu.cantidad+'</td>';
+            precioTotal += menu.menu.precio;
+            contenedor.appendChild(row);
+        }
+        document.getElementById("idPrecioTotal").innerHTML = "Precio total: $" + precioTotal;
+        console.log(res);
+    })
 }
 
 function cargarMenus(){
@@ -21,7 +67,7 @@ function cargarMenus(){
         contenedor.innerHTML = "";
         for(const menu of res){
             const card = document.createElement("div");
-            card.innerHTML = '<div class="card m-3" style="width: 18rem;">' + 
+            card.innerHTML = '<div class="card mb-3" style="width: 18rem;">' + 
             '<img src="./img/ImagenPrueba.png" class="card-img-top" alt="...">' +
             '<div class="card-body">' +
             '<h5 class="card-title">' + menu.nombre + "</h5>" +
@@ -79,26 +125,6 @@ function publicarMenu(){
         $("#modalPublicarMenu").modal("hide");
     })
 }
-
-function mostrarVista(id) {
-    // Oculta todas las vistas
-    var vistas = document.getElementsByClassName('vista');
-    for (var i = 0; i < vistas.length; i++) {
-        vistas[i].style.display = 'none';
-    }
-
-    // Muestra la vista correspondiente al ID proporcionado
-    var vista = document.getElementById(id);
-    vista.style.display = 'block';
-}
-
-function toggleActive(event) {
-    const links = document.querySelectorAll('.navbar .nav-link');
-    for (let i = 0; i < links.length; i++) {
-      links[i].classList.remove('active');
-    }
-    event.target.classList.add('active');
-}
   
 function cargarPedidos(){
     fetch('/historialPedidos/1', {
@@ -115,7 +141,7 @@ function cargarPedidos(){
             const row = document.createElement("tr");
             let descPedido = "";
             for(const menu of pedido.menus){
-                descPedido+=menu.menu.nombre + '(x' + menu.cantidad + '), '
+                descPedido+=menu.menu.nombre + ' (x' + menu.cantidad + '), '
             }
             descPedido = descPedido.slice(0, -2);
             let fechaPedido = new Date(pedido.fecha);
@@ -129,3 +155,21 @@ function cargarPedidos(){
         console.log(err);
     })
 }
+
+function realizarPedido(){
+    fetch('/realizarPedido/1', {
+        method: 'POST',
+        headers: {
+            'Content-Type': 'application/json'
+        }
+    }).then(x=>{
+        console.log("Pedido realizado");
+        cargarPedidos();
+        $("#modalCarrito").modal("hide");
+    }).catch(err=>{
+        console.log("Error realizando pedido");
+        console.log(err);
+        $("#modalCarrito").modal("hide");
+    })
+}
+
