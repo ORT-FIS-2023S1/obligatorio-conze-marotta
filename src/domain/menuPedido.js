@@ -1,9 +1,16 @@
 class MenuPedido{
 
-    constructor(menu, cantidad, fechaRetiro){
+    constructor(menu, cantidad){
         this.menu = menu;
         this.cantidad = cantidad;
-        this.fechaRetiro = fechaRetiro;
+    }
+
+    obtenerMenu(){
+        return this.menu;
+    }
+    
+    obtenerCantidad(){
+        return this.cantidad;
     }
 }
 

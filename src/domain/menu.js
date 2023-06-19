@@ -1,13 +1,14 @@
 class Menu{
 
-    constructor(id, nombre, descripcion, ingredientes, aptoParaCeliacos, aptoParaDiabeticos, img){
+    constructor(id, nombre, descripcion, ingredientes, aptoParaCeliacos, aptoParaDiabeticos, precio, img){
         this.idMenu = id;
         this.nombre = nombre;
         this.descripcion = descripcion;
         this.ingredientes = ingredientes;
         this.aptoParaCeliacos = aptoParaCeliacos;
         this.aptoParaDiabeticos = aptoParaDiabeticos;
-        this.imagen = img
+        this.precio = precio;
+        this.imagen = img;
     }
 
     obtenerID(){
@@ -32,6 +33,10 @@ class Menu{
 
     esAptoParaDiabeticos(){
         return this.aptoParaDiabeticos;
+    }
+
+    obtenerPrecio(){
+        return this.precio;
     }
     
 }

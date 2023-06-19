@@ -18,5 +18,10 @@ router.get('/listadoPedidos', (req, res)=>{
     res.send(listaPedidos);
 });
 
+router.get('/historialPedidos/:id', (req, res) => {
+    const listaPedidos = sistema.obtenerListaPedidosPorUsuario(req.params.id);
+    res.send(listaPedidos);
+});
+
 
 module.exports = router;

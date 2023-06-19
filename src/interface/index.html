@@ -133,6 +133,10 @@
                         <input type="text" id="nombreMenu">
                         <label for="descMenu">Descripcion: </label>
                         <input type="text" id="descMenu">
+                        <label for="ingredientesMenu">Ingredientes: </label>
+                        <input type="text" id="ingredientesMenu">
+                        <label for="precioMenu">Precio: </label>
+                        <input type="number" id="precioMenu">
                         <label for="aptoCeliacos">Apto para celiacos: </label>
                         <input type="checkbox" id="aptoCeliacos">
                         <label for="aptoDiabeticos">Apto para diabeticos: </label>
@@ -158,7 +162,7 @@
 
           <div class="mt-4">
             <a href="#">Mis comensales</a><br>
-            <a href="#">Historial de pedidos</a><br>
+            <a href="#" onclick="mostrarVista('historialPedidos')">Historial de pedidos</a><br>
             <a href="#">Medios de pago</a><br>
             <a href="#">Centro de ayuda</a><br>
             <a href="#">Configuración de la cuenta</a><br>
@@ -203,6 +207,28 @@
         <!-- Contenido de la vista 2 -->
         <h1>Notificaciones sin leer</h1>
         <p>Contenido de la vista 2.</p>
+      </div>
+    </div>
+
+    <div id="historialPedidos" class="vista">
+      <div class="container">
+        <h1>Mis pedidos</h1>
+        <div>
+          <ul class="list-group">
+            <table class="table">
+              <thead>
+                <tr>
+                  <th scope="col">Fecha</th>
+                  <th scope="col">Pedido</th>
+                  <th scope="col">Total</th>
+                </tr>
+              </thead>
+              <tbody id="contenedorMisPedidos">
+                
+              </tbody>
+            </table>
+          </ul>
+        </div>
       </div>
     </div>
 
