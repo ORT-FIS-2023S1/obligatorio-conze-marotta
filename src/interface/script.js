@@ -42,12 +42,21 @@ function cargarCarrito(){
         const contenedor = document.getElementById("contenedorMenusCarrito");
         contenedor.innerHTML = '';
         let precioTotal = 0;
-        for(const menu of res.menuPedidos){
+        if(res.menuPedidos.length > 0){
+            for(const menu of res.menuPedidos){
+                const row = document.createElement("tr");
+                row.innerHTML = '<td>' + menu.menu.nombre + '</td><td>' + menu.cantidad + '</td><td>$'+ menu.menu.precio * menu.cantidad+'</td><td><button onclick="eliminarMenu(this)"><i class="bi bi-trash-fill "></i></button></td>';
+                precioTotal += (menu.menu.precio * menu.cantidad);
+                contenedor.appendChild(row);
+            }
+            document.getElementById("btnRealizarPedido").disabled = false;
+        } else {
             const row = document.createElement("tr");
-            row.innerHTML = '<td>' + menu.menu.nombre + '</td><td>' + menu.cantidad + '</td><td>$'+ menu.menu.precio * menu.cantidad+'</td><td><button onclick="eliminarMenu(this)"><i class="bi bi-trash-fill "></i></button></td>';
-            precioTotal += (menu.menu.precio * menu.cantidad);
+            row.innerHTML = '<td>No hay menus agregados al carrito</td>';
             contenedor.appendChild(row);
+            document.getElementById("btnRealizarPedido").disabled = true;
         }
+        
         document.getElementById("idPrecioTotal").innerHTML = "Precio total: $" + precioTotal;
         console.log(res);
     })
@@ -114,14 +123,18 @@ function publicarMenu(){
         },
         body: JSON.stringify(menu)
     }).then(x=>{
-        console.log("Menú publicado");
-        console.log(menu);
+        return x.json();
+    }).then(res=>{
         $("#modalPublicarMenu").modal("hide");
+        if(res.success){
+            mostrarMensaje("Exito", res.msg);
+        } else {
+            mostrarMensaje("Error", res.msg);
+        }
         cargarMenus();
     }).catch(err=>{
-        console.log("Error publicando menú");
-        console.log(err);
         $("#modalPublicarMenu").modal("hide");
+        mostrarMensaje("Error", "Error publicando menú");
     })
 }
   
@@ -162,13 +175,13 @@ function realizarPedido(){
             'Content-Type': 'application/json'
         }
     }).then(x=>{
-        console.log("Pedido realizado");
         cargarPedidos();
         $("#modalCarrito").modal("hide");
+        mostrarMensaje("Exito", "El pedido fue realizado correctamente");
     }).catch(err=>{
-        console.log("Error realizando pedido");
         console.log(err);
         $("#modalCarrito").modal("hide");
+        mostrarMensaje("Error", "Error enviando pedido");
     })
 }
 
@@ -193,3 +206,15 @@ function eliminarMenu(boton){
         console.log(res);
     })
 }
+
+function mostrarMensaje(titulo, mensaje){
+    document.getElementById("tituloNotificacion").innerHTML = titulo;
+    document.getElementById("mensajeNotificacion").innerHTML = mensaje;
+    
+    var toast = new bootstrap.Toast(document.getElementById("liveToast"), {
+        autohide: true,
+        delay: 10000
+    });
+    toast.show();
+}
+    

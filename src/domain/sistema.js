@@ -11,8 +11,6 @@ class Sistema {
         this.listaMenus = [];
         this.listaUsuarios = [];
         this.carritos = [];
-        this.siguienteIDMenu = 0;
-        this.siguienteIDPedido = 0;
     }
 
     agregarPedido(pedido){
@@ -34,50 +32,62 @@ class Sistema {
     cargarDatosIniciales(){
         
         //Usuarios
-        const usuarioPadre = new Usuario(1, 'Juan', 'Lopez', 'juanlopez@correo.com', 1, ['Benito', 'Teo']);
-        const usuarioAdmin = new Usuario(2, 'Rosa', 'Gomez', 'larosagomez@correo.com', 2, []);
-        this.listaUsuarios.push(usuarioAdmin);
-        this.listaUsuarios.push(usuarioPadre);
+        const usuario1 = new Usuario(1, 'Juan', 'Pérez', 'juanperez@correo.com', 1, ['Benito', 'Teo']);
+        const usuario2 = new Usuario(2, 'Rosa', 'Gomez', 'larosagomez@correo.com', 2, []);
+        this.listaUsuarios.push(usuario2);
+        this.listaUsuarios.push(usuario1);
         this.listaUsuarios.forEach(user=>{
             const carrito = new Carrito(user);
             this.carritos.push(carrito);
         });
 
         //Menus
-        const menu1 = new Menu(this.obtenerNuevoIDMenu, 'Ensalada Cesar', 'Deliciosa ensalada cesar, ideal para comer rico y sano', 'Lechuga, tomate, queso parmesano, salsa cesar, croutons', true, true, 120, null);
-        const menu2 = new Menu(this.obtenerNuevoIDMenu, 'Tallarines con salsa boloñesa', 'Tallarines caseros, con una exquisita salga boloñesa también casera', 'Huevo, harina, sal, pulpa de tomate, carne picada, cebolla, morron', false, true, 150, null);
-        const menu3 = new Menu(this.obtenerNuevoIDMenu, 'Tarta de fiambre', 'Deliciosa tarta de fiambre casera', 'Huevo, harina, sal, aceite, jamon, queso', false, true, 130, null);
-        const menu4 = new Menu(this.obtenerNuevoIDMenu, 'Empanada de jamon y queso', 'Riquisima empanada caseras de jamon y queso al horno', 'Huevo, harina, sal, aceite, jamon, queso', false, true, 90, null);
+        const menu1 = new Menu('Ensalada César', 'Deliciosa ensalada César, ideal para comer rico y sano', 'Lechuga, tomate, queso parmesano, salsa César, croutons', true, true, 120, null);
+        const menu2 = new Menu('Tallarines con salsa boloñesa', 'Tallarines caseros, con una exquisita salsa boloñesa también casera', 'Huevo, harina, sal, pulpa de tomate, carne picada, cebolla, morrón', false, true, 150, null);
+        const menu3 = new Menu('Tarta de fiambre', 'Deliciosa tarta de fiambre casera', 'Huevo, harina, sal, aceite, jamón, queso', false, true, 130, null);
+        const menu4 = new Menu('Empanada de jamón y queso', 'Riquísima empanada casera de jamón y queso al horno', 'Huevo, harina, sal, aceite, jamon, queso', false, true, 90, null);
+        const menu5 = new Menu('Milanesa de pollo con pure', 'Exquisita milanesa de pollo con puré de papas casero', 'Pollo, papas, pan rallado, huevo', false, true, 90, null);
 
         this.listaMenus.push(menu1);
         this.listaMenus.push(menu2);
         this.listaMenus.push(menu3);
         this.listaMenus.push(menu4);
+        this.listaMenus.push(menu5);
 
         //Menu-Cantidad
         const menuPedido1 = new MenuPedido(menu1, 1);
         const menuPedido2 = new MenuPedido(menu2, 2);
         const menuPedido3 = new MenuPedido(menu3, 1);
+        const menuPedido4 = new MenuPedido(menu4, 1);
+        const menuPedido5 = new MenuPedido(menu5, 2);
+        const menuPedido6 = new MenuPedido(menu1, 1);
 
         //Pedidos
-        const pedido1 = new Pedido([menuPedido1, menuPedido2], 200, new Date('2023-04-11T14:24:00'), usuarioPadre);
-        const pedido2 = new Pedido([menuPedido3], 350, new Date('2023-05-20T18:12:00'), usuarioPadre);
+        const pedido1 = new Pedido([menuPedido1, menuPedido2], 200, new Date('2023-04-11T14:24:00'), usuario1);
+        const pedido2 = new Pedido([menuPedido3], 350, new Date('2023-05-20T18:12:00'), usuario1);
+        const pedido3 = new Pedido([menuPedido4,menuPedido5, menuPedido6], 700, new Date('2023-04-30T18:12:00'), usuario1);
         this.listaPedidos.push(pedido1);
         this.listaPedidos.push(pedido2);
+        this.listaPedidos.push(pedido3);
 
         //Carrito
         const menuCarrito1 = new MenuPedido(menu1, 2);
         const menuCarrito2 = new MenuPedido(menu4, 3);
+        const menuCarrito3 = new MenuPedido(menu5, 1);
+        const menuCarrito4 = new MenuPedido(menu3, 1);
+        
         this.carritos.find(carr=>carr.obtenerUsuarioCarrito().obtenerID() == 1).agregarMenu(menuCarrito1);
         this.carritos.find(carr=>carr.obtenerUsuarioCarrito().obtenerID() == 1).agregarMenu(menuCarrito2);
+        this.carritos.find(carr=>carr.obtenerUsuarioCarrito().obtenerID() == 1).agregarMenu(menuCarrito3);
+        this.carritos.find(carr=>carr.obtenerUsuarioCarrito().obtenerID() == 1).agregarMenu(menuCarrito4);
     }
 
     obtenerUsuarioPorID(id){
         return this.listaUsuarios.find(usr=>usr.obtenerID() === id);
     }
 
-    obtenerMenuPorID(id){
-        return this.listaMenus.find(menu=>menu.obtenerID() === id);
+    existeMenu(nombreMenu){
+        return this.listaMenus.find(menu=>menu.obtenerNombre() === nombreMenu) != undefined;
     }
 
     cargarMenuAlCarrito(idUsuario, idMenu){
@@ -88,19 +98,7 @@ class Sistema {
     obtenerUsuarios(){
         return this.listaUsuarios;
     }
-
-    obtenerNuevoIDMenu(){
-        const ret = this.siguienteIDMenu;
-        this.siguienteIDMenu++;
-        return ret;
-    }
-
-    obtenerNuevoIDPedido(){
-        const ret = this.siguienteIDPedido;
-        this.siguienteIDPedido++;
-        return ret;
-    }
-
+    
     obtenerListaPedidosPorUsuario(id){
         return this.listaPedidos.filter(ped=> ped.obtenerUsuario().obtenerID() == id).sort((a,b)=>b.obtenerFecha() - a.obtenerFecha());
     }
