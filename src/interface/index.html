@@ -73,24 +73,30 @@
               </div>
               <div class="modal-body">
                 <div>
-                  <form style="display: flex; flex-direction: column;" class="form">
-                    <label for="nombreMenu">Nombre: </label>
-                    <input type="text" id="nombreMenu" required>
-                    <label for="descMenu">Descripción: </label>
-                    <input type="text" id="descMenu" required>
-                    <label for="ingredientesMenu">Ingredientes: </label>
-                    <input type="text" id="ingredientesMenu" required>
-                    <label for="precioMenu">Precio: </label>
-                    <input type="number" id="precioMenu" required>
-                    <label for="aptoCeliacos">Apto para celíacos: </label>
-                    <input type="checkbox" id="aptoCeliacos">
-                    <label for="aptoDiabeticos">Apto para diabéticos: </label>
-                    <input type="checkbox" id="aptoDiabeticos">
+                  <form class="form">
+                    <label for="nombreMenu" class="form-label">Nombre: </label>
+                    <input type="text" id="nombreMenu" class="form-control" required>
+                    <label for="descMenu" class="form-label mt-2">Descripción: </label>
+                    <input type="text" id="descMenu" class="form-control" required>
+                    <label for="ingredientesMenu" class="form-label mt-2">Ingredientes: </label>
+                    <input type="text" id="ingredientesMenu" class="form-control" required>
+                    <label for="precioMenu" class="form-label" mt-2>Precio: </label>
+                    <input type="number" id="precioMenu" class="form-control" required>
+                    <div class="form-check mt-2">
+                      <input type="checkbox" id="aptoCeliacos" class="form-check-input">
+                      <label for="aptoCeliacos" class="form-check-label">Apto para celíacos: </label>
+                    </div>
+                    <div class="form-check mt-2">
+                      <input type="checkbox" id="aptoDiabeticos" class="form-check-input">
+                      <label for="aptoDiabeticos" class="form-check-label">Apto para diabéticos: </label>
+                    </div>
                     <!--label for="imagen">Imagen </label>
                           <input type="file" id="imagen"-->
                     <div class="modal-footer">
-                      <button type="button" class="btn btn-secondary rounded secondary-color" data-dismiss="modal">Cancelar</button>
-                      <button type="submit" class="btn btn-primary rounded primary-color" id="btnPublicarMenu">Publicar</button>
+                      <button type="button" class="btn btn-secondary rounded secondary-color"
+                        data-dismiss="modal">Cancelar</button>
+                      <button type="submit" class="btn btn-primary rounded primary-color"
+                        id="btnPublicarMenu">Publicar</button>
                     </div>
                   </form>
                 </div>
@@ -104,19 +110,20 @@
           <button class="btn btn-secondary me-2 rounded disabled"><i class="bi bi-wallet-fill"></i> Saldo </button>
           <button class="btn btn-secondary me-2 rounded disabled"><i class="bi bi-dice-6-fill"></i> Puntos </button>
           <button class="btn btn-secondary me-2 rounded disabled"><i class="bi bi-ticket-fill"></i> Cupones </button>
-          <button class="btn btn-secondary me-2 rounded disabled"><i class="bi bi-wallet-fill"></i> Cargar saldo</button>
+          <button class="btn btn-secondary me-2 rounded disabled"><i class="bi bi-wallet-fill"></i> Cargar
+            saldo</button>
         </div>
 
         <div class="mt-4">
           <!--Desactivado, no se implementó en esta versión-->
           <a href="#" class="disabled">Mis comensales</a><br>
           <a href="#" onclick="mostrarVista('historialPedidos')">Historial de pedidos</a><br>
-           <!--Desactivado, no se implementó en esta versión-->
+          <!--Desactivado, no se implementó en esta versión-->
           <a class="disabled" href="#">Medios de pago</a><br>
-           <!--Desactivado, no se implementó en esta versión-->
+          <!--Desactivado, no se implementó en esta versión-->
           <a href="#" class="disabled">Centro de ayuda</a><br>
           <a href="#" class="disabled">Configuración de la cuenta</a><br>
-           <!--Desactivado, no se implementó en esta versión-->
+          <!--Desactivado, no se implementó en esta versión-->
           <a href="#" data-toggle="modal" data-target="#modalPublicarMenu">Publicar menú</a><br>
         </div>
 
@@ -152,8 +159,10 @@
                 </div>
               </div>
               <div class="modal-footer">
-                <button type="button" class="btn btn-secondary rounded secondary-color" data-dismiss="modal">Cancelar</button>
-                <button type="button" class="btn btn-primary rounded primary-color" id="btnRealizarPedido">Realizar pedido</button>
+                <button type="button" class="btn btn-secondary rounded secondary-color"
+                  data-dismiss="modal">Cancelar</button>
+                <button type="button" class="btn btn-primary rounded primary-color" id="btnRealizarPedido">Realizar
+                  pedido</button>
               </div>
             </div>
           </div>

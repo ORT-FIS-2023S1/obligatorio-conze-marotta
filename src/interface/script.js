@@ -134,12 +134,6 @@ function publicarMenu() {
   const ingredientes = document.getElementById('ingredientesMenu').value;
 
   if (nombre != '' && desc != '' && precio != '' && ingredientes != '') {
-    document.getElementById('nombreMenu').value = '';
-    document.getElementById('descMenu').value = '';
-    document.getElementById('aptoCeliacos').checked = false;
-    document.getElementById('aptoDiabeticos').checked = false;
-    document.getElementById('precioMenu').value = '';
-    document.getElementById('ingredientesMenu').value = '';
     const menu = {
       nombre: nombre,
       descripcion: desc,
@@ -159,6 +153,12 @@ function publicarMenu() {
       return x.json();
     }).then((res) => {
       $('#modalPublicarMenu').modal('hide');
+      document.getElementById('nombreMenu').value = '';
+      document.getElementById('descMenu').value = '';
+      document.getElementById('aptoCeliacos').checked = false;
+      document.getElementById('aptoDiabeticos').checked = false;
+      document.getElementById('precioMenu').value = '';
+      document.getElementById('ingredientesMenu').value = '';
       if (res.success) {
         mostrarMensaje('Exito', res.msg);
       } else {
