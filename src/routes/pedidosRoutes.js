@@ -2,11 +2,6 @@ const express = require('express');
 const router = express.Router();
 const sistema = require('../domain/sistema');
 
-router.get('/probandoPedido', (req, res)=>{
-    console.log('PROBANDO MENU');
-    res.send('HOLA, FUNCIONO EL ROUTE DE PEDIDO');
-});
-
 router.post('/realizarPedido/:id', (req, res)=>{
     const pedido = req.body;
     sistema.realizarPedido(req.params.id);
@@ -27,5 +22,10 @@ router.get('/obtenerCarrito/:id', (req, res) => {
     const carrito = sistema.obtenerCarritoPorIdUsuario(req.params.id);
     res.send(carrito);
 });
+
+router.post('/eliminarMenuDeCarrito', (req, res)=>{
+    sistema.borrarMenuDeCarrito(req.body.nombreMenu, req.body.idUsuario);
+    res.send("Ok");
+})
 
 module.exports = router;

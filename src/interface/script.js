@@ -1,7 +1,6 @@
 window.addEventListener("load", inicio);
 
 function inicio(){
-    //document.getElementById("btnObtenerMenus").addEventListener("click", cargarMenus);
     document.getElementById("btnPublicarMenu").addEventListener("click", publicarMenu);
     document.getElementById("btnRealizarPedido").addEventListener("click", realizarPedido);
     
@@ -45,8 +44,8 @@ function cargarCarrito(){
         let precioTotal = 0;
         for(const menu of res.menuPedidos){
             const row = document.createElement("tr");
-            row.innerHTML = '<td>' + menu.menu.nombre + '</td><td>' + menu.cantidad + '</td><td>$'+ menu.menu.precio * menu.cantidad+'</td>';
-            precioTotal += menu.menu.precio;
+            row.innerHTML = '<td>' + menu.menu.nombre + '</td><td>' + menu.cantidad + '</td><td>$'+ menu.menu.precio * menu.cantidad+'</td><td><button onclick="eliminarMenu(this)"><i class="bi bi-trash-fill "></i></button></td>';
+            precioTotal += (menu.menu.precio * menu.cantidad);
             contenedor.appendChild(row);
         }
         document.getElementById("idPrecioTotal").innerHTML = "Precio total: $" + precioTotal;
@@ -173,3 +172,24 @@ function realizarPedido(){
     })
 }
 
+function eliminarMenu(boton){
+    console.log(boton);
+    console.log(boton.parentNode)
+    const data = {
+        nombreMenu: boton.parentNode.parentNode.cells[0].innerText,
+        idUsuario: 1
+    }
+    fetch('/eliminarMenuDeCarrito', {
+        method: 'POST',
+        headers: {
+            'Content-Type': 'application/json'
+        },
+        body: JSON.stringify(data)
+    }).then(res=>{
+        cargarCarrito();
+        return res.json();
+
+    }).then(res=>{
+        console.log(res);
+    })
+}

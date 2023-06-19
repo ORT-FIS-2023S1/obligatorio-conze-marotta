@@ -120,6 +120,11 @@ class Sistema {
         this.listaPedidos.push(pedidoNuevo);
     }
 
+    borrarMenuDeCarrito(nombreMenu, idUsuario){
+        const carr = this.obtenerCarritoPorIdUsuario(idUsuario);
+        carr.borrarMenu(nombreMenu);
+    }
+
 }
 
 //Singleton

@@ -10,7 +10,7 @@ class Carrito{
     }
 
     borrarMenu(nombre){
-        this.menuPedidos = this.menuPedidos.filter(x=>x.menu.nombre == nombre);
+        this.menuPedidos = this.menuPedidos.filter(x=>x.menu.nombre != nombre);
     }
 
     obtenerMenus(){
