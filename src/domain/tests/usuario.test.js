@@ -3,18 +3,18 @@ import Usuario from '../usuario';
 
 
 describe('Usuario', () => {
-  const usuario = new Usuario(1, 'John', 'Doe', 'john.doe@example.com', 'admin', 4);
+  const usuario = new Usuario(1, 'Pedro', 'Pereira', 'ppereira@example.com', 'admin', 4);
 
   test('debería devolver el nombre correcto', () => {
-    expect(usuario.obtenerNombre()).toEqual('John');
+    expect(usuario.obtenerNombre()).toEqual('Pedro');
   });
 
   test('debería devolver el apellido correcto', () => {
-    expect(usuario.obtenerApellido()).toEqual('Doe');
+    expect(usuario.obtenerApellido()).toEqual('Pereira');
   });
 
   test('debería devolver el email correcto', () => {
-    expect(usuario.obtenerEmail()).toEqual('john.doe@example.com');
+    expect(usuario.obtenerEmail()).toEqual('ppereira@example.com');
   });
 
   test('debería devolver el perfil correcto', () => {

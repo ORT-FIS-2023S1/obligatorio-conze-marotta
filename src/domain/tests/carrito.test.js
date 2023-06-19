@@ -6,13 +6,13 @@ import Menu from '../menu';
 
 
 describe('Carrito', () => {
-  const usuario = new Usuario(1, 'John', 'Doe', 'john.doe@example.com', 'cliente', 3);
+  const usuario = new Usuario(1, 'Juan', 'Perez', 'jperez@example.com', 'cliente', 3);
   const carrito = new Carrito(usuario);
 
-  const menu1 = new Menu(1, 'Hamburguesa', 'Deliciosa hamburguesa con queso y tomate', ['pan', 'carne', 'queso', 'tomate'], true, false, 10.99, 'hamburguesa.jpg');
+  const menu1 = new Menu(1, 'Hamburguesa', 'Deliciosa hamburguesa con queso y tomate', ['pan', 'carne', 'queso', 'tomate'], true, false, 200, 'hamburguesa.jpg');
   const menuPedido1 = new MenuPedido(menu1, 2);
 
-  const menu2 = new Menu(2, 'Pizza', 'Sabrosa pizza de pepperoni', ['masa', 'salsa de tomate', 'queso', 'pepperoni'], false, false, 12.99, 'pizza.jpg');
+  const menu2 = new Menu(2, 'Pizza', 'Sabrosa pizza de pepperoni', ['masa', 'salsa de tomate', 'queso', 'pepperoni'], false, false, 150, 'pizza.jpg');
   const menuPedido2 = new MenuPedido(menu2, 1);
 
   test('debería agregar un menú al carrito', () => {
