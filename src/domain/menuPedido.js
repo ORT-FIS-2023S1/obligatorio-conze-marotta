@@ -1,10 +1,10 @@
 /** Almacena un menu y una cantidad asociada para luego usar en el carrito */
 class MenuPedido {
-/** Constructor de MenuPedido
-   * @constructor
-   * @param{Menu} menu - menu asociado.
-   * @param{number} cantidad - cantidad.
-  */
+  /** Constructor de MenuPedido
+     * @constructor
+     * @param{Menu} menu - menu asociado.
+     * @param{number} cantidad - cantidad.
+    */
   constructor(menu, cantidad) {
     this.menu = menu;
     this.cantidad = cantidad;

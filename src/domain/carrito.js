@@ -2,10 +2,10 @@
  * Representa un carrito en el sistema
  */
 class Carrito {
-/**
- * Constructor de la clase Carrito
- * @param {Usuario} usuario - usuario dueño del carrito
- */
+  /**
+   * Constructor de la clase Carrito
+   * @param {Usuario} usuario - usuario dueño del carrito
+   */
   constructor(usuario) {
     this.menuPedidos = [];
     this.usuario = usuario;
