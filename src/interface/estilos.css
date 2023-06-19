@@ -61,6 +61,8 @@
 
   .secondary-color{
     background-color: #0277bd;
+    color:white;
+    border: none;
   }
 
   .btn-secondary,
@@ -92,6 +94,7 @@
  
   .primary-color{
     background-color: #1b5e20;
+    border: none;
   }
 
   .body {
