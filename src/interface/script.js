@@ -69,7 +69,7 @@ function cargarCarrito() {
         '<td><button class="btn btn-transparent"' +
         ' onclick="eliminarMenu(this)"' +
         ' aria-label="Quitar menú del carrito">' +
-        '<i class="bi bi-trash-fill "></i></button></td>';
+        '<i class="bi bi-trash-fill"></i></button></td>';
         precioTotal += (menu.menu.precio * menu.cantidad);
         contenedor.appendChild(row);
       }
