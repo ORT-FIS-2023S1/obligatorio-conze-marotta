@@ -104,7 +104,7 @@ function cargarMenus() {
     contenedor.innerHTML = '';
     for (const menu of res) {
       const card = document.createElement('div');
-      card.innerHTML = '<div class="card card-sm m-3">' +
+      card.innerHTML = '<div class="card card-sm m-3 card-menu">' +
         '<img src="./img/ImagenPrueba.png" class="card-img-top" alt="...">' +
         '<div class="card-body">' +
         '<h1 class="card-title">' + menu.nombre + '</h1>' +

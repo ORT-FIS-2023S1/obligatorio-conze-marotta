@@ -83,6 +83,11 @@
     border-radius: 0;
   }
 
+  .btn-primary:disabled {
+    background-color: #2d9134;
+    border-radius: 0;
+  }
+
   .btn-primary:hover{
     background-color: #134516;
   }
@@ -106,4 +111,8 @@
     color: gray;
     /* And disable the pointer events */
     pointer-events: none;
+  }
+
+  .card-menu{
+    border: 1px solid #0277bd;
   }
