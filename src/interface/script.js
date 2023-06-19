@@ -45,7 +45,7 @@ function cargarCarrito(){
         if(res.menuPedidos.length > 0){
             for(const menu of res.menuPedidos){
                 const row = document.createElement("tr");
-                row.innerHTML = '<td>' + menu.menu.nombre + '</td><td>' + menu.cantidad + '</td><td>$'+ menu.menu.precio * menu.cantidad+'</td><td><button onclick="eliminarMenu(this)"><i class="bi bi-trash-fill "></i></button></td>';
+                row.innerHTML = '<td>' + menu.menu.nombre + '</td><td>' + menu.cantidad + '</td><td>$'+ menu.menu.precio * menu.cantidad+'</td><td><button onclick="eliminarMenu(this)" aria-label="Quitar menú del carrito"><i class="bi bi-trash-fill "></i></button></td>';
                 precioTotal += (menu.menu.precio * menu.cantidad);
                 contenedor.appendChild(row);
             }
@@ -75,10 +75,10 @@ function cargarMenus(){
         contenedor.innerHTML = "";
         for(const menu of res){
             const card = document.createElement("div");
-            card.innerHTML = '<div class="card mb-3" style="width: 18rem;">' + 
+            card.innerHTML = '<div class="card card-sm m-3">' + 
             '<img src="./img/ImagenPrueba.png" class="card-img-top" alt="...">' +
             '<div class="card-body">' +
-            '<h5 class="card-title">' + menu.nombre + "</h5>" +
+            '<h1 class="card-title">' + menu.nombre + "</h1>" +
             '<p class="card-text">' + menu.descripcion +'</p>' +
             '<p class="card-text"><small>Ingredientes: ' + menu.ingredientes + '</small></p>'
             '</div></div>';
