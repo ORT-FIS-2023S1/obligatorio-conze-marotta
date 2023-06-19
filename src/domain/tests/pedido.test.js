@@ -5,9 +5,9 @@ describe('Pedido', () => {
 
   beforeEach(() => {
     const menus = ['Menu 1', 'Menu 2', 'Menu 3'];
-    const precioTotal = 50;
+    const precioTotal = 560;
     const fecha = new Date();
-    const usuario = 'John Doe';
+    const usuario = 'Horacio Quiroga';
 
     pedido = new Pedido(menus, precioTotal, fecha, usuario);
   });
@@ -23,7 +23,7 @@ describe('Pedido', () => {
 
   it('debe obtener el precio total del pedido', () => {
     const precioTotal = pedido.obtenerPrecioTotal();
-    expect(precioTotal).toBe(50);
+    expect(precioTotal).toBe(560);
   });
 
   test('debe obtener la fecha del pedido', () => {
@@ -33,6 +33,6 @@ describe('Pedido', () => {
 
   test('debe obtener el usuario del pedido', () => {
     const usuario = pedido.obtenerUsuario();
-    expect(usuario).toBe('John Doe');
+    expect(usuario).toBe('Horacio Quiroga');
   });
 });
