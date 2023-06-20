@@ -3,7 +3,6 @@ const app = express();
 const port = 4000;
 const pedidosRoutes = require('./routes/pedidosRoutes');
 const menuRoutes = require('./routes/menuRoutes');
-// const sistema = require('./public/models/sistema');
 
 app.use(express.static('interface'));
 

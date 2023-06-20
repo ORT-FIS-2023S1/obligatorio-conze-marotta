@@ -100,9 +100,9 @@
     background-color: #1b5e20;
     border: none;
   }
-  
+
   h1, h2, h3, h4, h5, p, small, div, th, a, td {
-    font-family: 'Roboto'
+    font-family: 'Roboto';
   }
   
   a.disabled {
