@@ -100,11 +100,11 @@
     background-color: #1b5e20;
     border: none;
   }
-
-  .body {
-    font-family: 'Roboto', sans-serif;
+  
+  h1, h2, h3, h4, h5, p, small, div, th, a, td {
+    font-family: 'Roboto'
   }
-
+  
   a.disabled {
     /* Make the disabled links grayish*/
     color: gray;
