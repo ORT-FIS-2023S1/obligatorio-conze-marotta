@@ -28,4 +28,9 @@ router.post('/eliminarMenuDeCarrito', (req, res) => {
   res.send('Ok');
 });
 
+router.post('/llenarCarritoAleatoriamente/:id', (req, res)=>{
+  sistema.cargarCarritoRandom(req.params.id);
+  res.send('Ok');
+});
+
 module.exports = router;

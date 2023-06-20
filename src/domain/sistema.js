@@ -191,6 +191,7 @@ class Sistema {
         precioTotal, new Date(),
         this.listaUsuarios.find((usr) => usr.obtenerID() == idUsuario));
     this.listaPedidos.push(pedidoNuevo);
+    carrito.vaciar();
   }
 
   /**
@@ -202,6 +203,21 @@ class Sistema {
   borrarMenuDeCarrito(nombreMenu, idUsuario) {
     const carr = this.obtenerCarritoPorIdUsuario(idUsuario);
     carr.borrarMenu(nombreMenu);
+  }
+
+  /**
+   * Carga 3 menus de forma aleatoria en el carrito del usuario
+   * Especificado
+   * @param {*} idUsuario - id de usuario
+   */
+  cargarCarritoRandom(idUsuario) {
+    const carrito = this.obtenerCarritoPorIdUsuario(idUsuario);
+    carrito.vaciar();
+    for (let i = 0; i < 3; i++) {
+      const j = Math.floor(Math.random() * this.listaMenus.length);
+      const menuPedido = new MenuPedido(this.listaMenus[j], 2);
+      carrito.agregarMenu(menuPedido);
+    }
   }
 }
 

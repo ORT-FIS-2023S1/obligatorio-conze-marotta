@@ -90,4 +90,10 @@ describe('Sistema', () => {
     const menuNombres = menus.map((menu) => menu.obtenerMenu().obtenerNombre());
     expect(menuNombres).not.toContain('Ensalada César');
   });
+
+  test('debe cargar el carrito de un usuario con 3 menus aleatorios', () => {
+    sistema.cargarCarritoRandom(1);
+    const carrito = sistema.obtenerCarritoPorIdUsuario(1);
+    expect(carrito.obtenerMenus()).toHaveLength(3);
+  });
 });

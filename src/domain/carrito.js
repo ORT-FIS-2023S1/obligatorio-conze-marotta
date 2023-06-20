@@ -44,6 +44,13 @@ class Carrito {
   obtenerUsuarioCarrito() {
     return this.usuario;
   }
+
+  /**
+   * Vacia el carrito
+   */
+  vaciar() {
+    this.menuPedidos = [];
+  }
 }
 
 module.exports = Carrito;

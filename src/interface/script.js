@@ -12,7 +12,9 @@ function inicio() {
 
   cargarMenus();
   cargarPedidos();
-  cargarCarrito();
+
+  // Cargo datos en el carrito al iniciar la web
+  cargarCarritoRandom();
   mostrarVista('menu');
 }
 
@@ -221,6 +223,7 @@ function realizarPedido() {
     cargarPedidos();
     $('#modalCarrito').modal('hide');
     mostrarMensaje('Exito', 'El pedido fue realizado correctamente');
+    cargarCarrito();
   }).catch((err) => {
     console.log(err);
     $('#modalCarrito').modal('hide');
@@ -268,4 +271,21 @@ function mostrarMensaje(titulo, mensaje) {
     delay: 10000,
   });
   toast.show();
+}
+
+/**
+ * Carga el carrito del usuario con menus aleatorios
+ */
+function cargarCarritoRandom() {
+  fetch('/llenarCarritoAleatoriamente/1', {
+    method: 'POST',
+    headers: {
+      'Content-Type': 'application/json',
+    },
+  }).then((res) => {
+    cargarCarrito();
+    return res.json();
+  }).then((res) => {
+    console.log(res);
+  });
 }
