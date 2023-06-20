@@ -284,7 +284,7 @@ function cargarCarritoRandom() {
     },
   }).then((res) => {
     cargarCarrito();
-    return res.json();
+    return res;
   }).then((res) => {
     console.log(res);
   });
