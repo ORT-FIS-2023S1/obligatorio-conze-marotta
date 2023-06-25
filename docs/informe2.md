@@ -4,7 +4,7 @@
 
 ### Implementación de funciones principales
 
-Para la construcción del sistema, utilizamos las tecnologías NodeJS para el backend, y HTML, CSS y JavaScript para el frontend. A su vez, para el frontend también utilizamos el framework Bootstrap para estilar la web y hacer que esta sea responsiva.
+Para la construcción del sistema, utilizamos las tecnologías NodeJS para el backend, y HTML, CSS y JavaScript para el frontend. A su vez, para el frontend también utilizamos el framework Bootstrap para estilizar la web y hacer que esta sea responsiva.
 
 Las funciones implementadas en el sistema para esta instancia de entrega fueron las siguientes:
 
@@ -24,7 +24,7 @@ Para la construcción del proyecto se utilizaron las siguientes librerías exter
 - **nodemon (^2.0.22):** La función de esta librería es reiniciar la aplicación cada vez que se detectan cambios en el código. Esto es muy util en la etapa de desarrollo, para no tener que reiniciar manualmente la aplicación cada vez que se hace un cambio. Para el uso de esta librería, se agrego un script *dev* en el archivo *package.json* que ejecuta el comando *nodemon app.js*, levantando la aplicación con nodemon.
 
 ## Interfaz de usuario
-En lo que refiere a la interfaz de usuario, se implementó una única página, con navegación entre las distinas secciones de la misma a través de una barra de navegación.
+En lo que refiere a la interfaz de usuario, se implementó una única página, con navegación entre las distintas secciones de la misma a través de una barra de navegación.
 
 Como fue mencionado anteriormente, para la implementación de la interfaz de usuario fue utilizado el framework *Bootstrap*, dando como resultado una web responsiva adaptandose a distintas pantallas.
 
@@ -111,5 +111,29 @@ Por otro lado, en la carpeta **domain** se encuentran las clases utilizadas para
 - **sistema.js:** esta clase se encarga de almacenar y administrar el listado de menus existentes, pedidos realizados, usuarios creados y sus carritos.
 
 ## Test unitario
+
+Como mencionamos anteriormente, para realizar testing unitario, se utilizó la libreria Jest. Para cada clase del dominio, se creó un archivo ".test.js" dentro de la carpeta Los "tests", logrando un 100% de cobertura.
+
+ PASS  domain/tests/menuPedido.test.js
+ PASS  domain/tests/menu.test.js
+ PASS  domain/tests/pedido.test.js
+ PASS  domain/tests/usuario.test.js
+ PASS  domain/tests/carrito.test.js
+ PASS  domain/tests/sistema.test.js
+
+File         | % Stmts | % Branch | % Funcs | % Lines | Uncovered Line #s                                              
+-------------|---------|----------|---------|---------|-------------------
+All files    |     100 |      100 |     100 |     100 | 
+ carrito.js  |     100 |      100 |     100 |     100 | 
+ menu.js |     100 |      100 |     100 |     100 | 
+ menuPedido.js  |     100 |      100 |     100 |     100 | 
+ pedido.js   |     100 |      100 |     100 |     100 | 
+ sistema.js   |     100 |      100 |     100 |     100 | 
+ usuario.js   |     100 |      100 |     100 |     100 | 
+
+
+Test Suites: 6 passed, 6 total
+
+Tests:       35 passed, 35 total
 
 ## Reflexión
