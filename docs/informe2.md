@@ -114,6 +114,8 @@ Por otro lado, en la carpeta **domain** se encuentran las clases utilizadas para
 
 Como mencionamos anteriormente, para realizar testing unitario, se utilizó la libreria Jest. Para cada clase del dominio, se creó un archivo ".test.js" dentro de la carpeta Los "tests", logrando un 100% de cobertura.
 
+Para realizar las pruebas, en los archivos de test se desactivó una regla de ESLint, la cual nos permite crear líneas de más de 80 caracteres sin mostrar error.
+
  PASS  domain/tests/menuPedido.test.js
  PASS  domain/tests/menu.test.js
  PASS  domain/tests/pedido.test.js
