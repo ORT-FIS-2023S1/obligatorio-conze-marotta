@@ -80,7 +80,41 @@ Para la codificación del proyecto, el IDE utilizado fue Visual Studio Code. En 
 
 El proyecto sigue los estándares de codificación de Google Style. Para asegurar esto, fué utilizada la herramienta ESLint mencionada anteriormente, la cual realiza el análisis estático de código, detectando fallas y malas prácticas en éste para posteriormente realizar las correcciónes y hacer que el código cumpla los estándares especificados.
 
+Con esta herramienta se logró detectar la aplicación de malas prácticas en varios puntos del sistema. Algunas de estas fueron:
+- Uso de comillas dobles en strings.
+- Identación de 4 espacios.
+- Constantes y variables definidas sin usar.
 
+![Identación de 4 espacios](./img/ErrorESLint1.PNG "Identación de 4 espacios")
+
+![Uso de comillas dobles en strings](./img/ErrorESLint2.PNG "Uso de comillas dobles en strings")
+
+![Constantes y variables definidas sin usar](./img/ErrorESLint3.PNG "Constantes y variables definidas sin usar")
+
+Para la corrección de los errores detectados, algunos de los ajustes realizados fueron los siguientes:
+- Cambio en la configuración de Visual Studio Code para que la identación sea de 2 espacios.
+- Se eliminaron todas las variables y constantes declaradas que no se usaban.
+- Se cambiaron las comillas dobles en la declaración de strings por comillas simples.
+- Se agregaron comentarios en las declaraciones de funciones y clases.
+
+Posterior a estos ajustes, ya no se detectaron errores en el código:
+
+![Corrección errores ESLint](./img/CorreccionESLint.PNG "Corrección errores ESLint")
+
+El desarrollo sigue buenas prácticas de POO, teniendo separada la parte lógica de lo que es la interfaz.
+
+En la carpeta **interface** se encuentra todo lo relacionado a la interfaz. En esta podemos encontrar los siguientes archivos:
+- index.html: el HTML con la página única.
+- estilos.css: algunos estilos definidos que no se encuentran en bootstrap.
+- script.js: este archivo se encarga de manejar los eventos del HTML, realizar las peticiones al server, y mostrar en pantalla los datos obtenidos.
+
+Por otro lado, en la carpeta **domain** se encuentran las clases utilizadas para el desarrollo, las cuales se listan a continuación:
+- **carrito.js:** representa un carrito en el sistema. Asocia a un usuario con una lista de menus y cantidad para cada uno.
+- **menu.js:** representa un menú en el sistema. Contiene un nombre, una descripción, los ingredientes de este, si es apto para celíacos, si es apto para diabéticos, y su precio.
+- **menuPedido.js:** esta clase se utiliza para asociar un menú con una cantidad deseada, tanto para el carrito como para los pedidos.
+- **pedido.js:** esta clase representa un pedido en el sistema. Esta representada por una lista de instancias de *menuPedido*  (menú y cantidad de este), el precio total del pedido, la fecha de realización, y el usuario que lo hizo.
+- **usuario.js:** representa a los usuarios del sistema. Contiene el id del usuario, nombre, apellido, email, perfil (si es tutor o administrador), y comensales asociados.
+- **sistema.js:** esta clase se encarga de almacenar y administrar el listado de menus existentes, pedidos realizados, usuarios creados y sus carritos.
 
 ## Test unitario
 
