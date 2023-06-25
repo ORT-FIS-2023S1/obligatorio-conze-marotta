@@ -16,21 +16,15 @@ Las funciones implementadas en el sistema para esta instancia de entrega fueron 
 
 ### Librerías externas utilizadas
 Para la construcción del proyecto se utilizaron las siguientes librerías externas:
-
-**babel (^6.23.0):** Se utiliza para pasar código JavaScript moderno a versiones anteriores de este mas compatibles con los navegadores y entornos de ejecución mas antiguos.
-
-**bootstrap (^5.3.0):** este framework proporciona una amplia variedad de componentes y estilos predefinidos para crear sitios web responsivos de manera sencilla.
-
-**ejs (^3.1.9):** Esta librería se utiliza para generar vistas HTML dinámicas, mezclando código JavaScript con HTML.
-
-**express (^4.18.2):** Esta librería se utiliza para levantar un servidor web de manera sencilla, y facilita el manejo de solicitudes y respuestas en este.
-
-**jest (^29.5.0):** Esta libería facilita la escritura y ejecución de pruebas unitarias.
-
-**nodemon (^2.0.22):** La función de esta librería es reiniciar la aplicación cada vez que se detectan cambios en el código. Esto es muy util en la etapa de desarrollo, para no tener que reiniciar manualmente la aplicación cada vez que se hace un cambio. Para el uso de esta librería, se agrego un script *dev* en el archivo *package.json* que ejecuta el comando *nodemon app.js*, levantando la aplicación con nodemon.
+- **babel (^6.23.0):** Se utiliza para pasar código JavaScript moderno a versiones anteriores de este mas compatibles con los navegadores y entornos de ejecución mas antiguos.
+- **bootstrap (^5.3.0):** este framework proporciona una amplia variedad de componentes y estilos predefinidos para crear sitios web responsivos de manera sencilla.
+- **ejs (^3.1.9):** Esta librería se utiliza para generar vistas HTML dinámicas, mezclando código JavaScript con HTML.
+- **express (^4.18.2):** Esta librería se utiliza para levantar un servidor web de manera sencilla, y facilita el manejo de solicitudes y respuestas en este.
+- **jest (^29.5.0):** Esta libería facilita la escritura y ejecución de pruebas unitarias.
+- **nodemon (^2.0.22):** La función de esta librería es reiniciar la aplicación cada vez que se detectan cambios en el código. Esto es muy util en la etapa de desarrollo, para no tener que reiniciar manualmente la aplicación cada vez que se hace un cambio. Para el uso de esta librería, se agrego un script *dev* en el archivo *package.json* que ejecuta el comando *nodemon app.js*, levantando la aplicación con nodemon.
 
 ## Interfaz de usuario
-En lo que refiere a la interfaz de usuario, se implementó en una única página, con navegación entre las distinas secciones de la misma a través de una barra de navegación.
+En lo que refiere a la interfaz de usuario, se implementó una única página, con navegación entre las distinas secciones de la misma a través de una barra de navegación.
 
 Como fue mencionado anteriormente, para la implementación de la interfaz de usuario fue utilizado el framework *Bootstrap*, dando como resultado una web responsiva adaptandose a distintas pantallas.
 
