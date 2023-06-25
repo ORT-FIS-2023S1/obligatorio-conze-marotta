@@ -48,7 +48,21 @@ La fuente utilizada para los textos del sistema fue **Roboto**, y se utilizaron 
 
 ### Principios de usabilidad
 
-*Hay que desarrollar...*
+Nuestra aplicación ha sido diseñada siguiendo varias de las heurísticas propuestas por Jakob Nielsen, reconocido experto en usabilidad. A continuación, se detallan algunas de las heurísticas que hemos intentado respetar y cómo se aplican en nuestra aplicación:
+
+**Visibilidad del estatus del sistema:**
+Hemos incorporado indicadores visuales para mostrar el estatus del sistema y brindar retroalimentación al usuario. Por ejemplo, cuando se finaliza una compra de menú a través del carrito, mostramos un mensaje de que El pedido fue realizado correctamente.
+
+**Vínculo entre el sistema y el mundo real:**
+Hemos buscado modelar las cosas del mundo real de forma coherente en nuestra aplicación. Por ejemplo, utilizamos terminología fácilmente reconocible y comprensible para los usuarios, "Historial de pedidos"" o "Publicar Menú". También hemos utilizado íconos que aporten a la identificación de los botónes de la barra de navegación.
+
+**Libertad y control del usuario:**
+Nuestra aplicación brinda libertad y control al usuario en diferentes aspectos. Los usuarios tienen la posibilidad de moverse por la aplicación según sus necesidades, acceder a diferentes secciones, aceptar o cancelar acciones, avanzar o retroceder en los pasos del proceso, entre otras opciones. Además, hemos diseñado una interfaz intuitiva que permite una navegación sencilla y fluida, otorgando al usuario un mayor control sobre su interacción con la aplicación.
+
+**Diseño minimalista:**
+Hemos adoptado un enfoque de diseño minimalista, siguiendo el principio de "menos es más". Nos hemos enfocado en mostrar únicamente la información y las funciones necesarias para que los usuarios puedan completar sus tareas de manera eficiente. Al eliminar elementos innecesarios y mantener una interfaz limpia y ordenada, hemos logrado simplificar la interacción del usuario y mejorar la usabilidad de la aplicación.
+
+Estas son solo algunas de las heurísticas de Nielsen que hemos tenido en cuenta al desarrollar nuestra aplicación para el comedor escolar. Al seguir estas pautas, buscamos asegurar una experiencia de usuario intuitiva, eficiente y satisfactoria, donde los usuarios puedan interactuar de manera natural y encontrar fácilmente lo que necesitan para realizar sus pedidos de comida de forma cómoda y rápida.
 
 ### Cumplimiento de estándar de accesibilidad WCAG
 
