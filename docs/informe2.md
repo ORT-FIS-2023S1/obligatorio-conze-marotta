@@ -131,10 +131,15 @@ Como mencionamos anteriormente, para realizar testing unitario, se utilizó la l
 Para realizar las pruebas, en los archivos de test se desactivó una regla de ESLint, la cual nos permite crear líneas de más de 80 caracteres sin mostrar error.
 
  PASS  domain/tests/menuPedido.test.js
+
  PASS  domain/tests/menu.test.js
+
  PASS  domain/tests/pedido.test.js
+ 
  PASS  domain/tests/usuario.test.js
+ 
  PASS  domain/tests/carrito.test.js
+ 
  PASS  domain/tests/sistema.test.js
 
 File         | % Stmts | % Branch | % Funcs | % Lines | Uncovered Line #s                                              
@@ -164,3 +169,10 @@ Sobre el backend, me costó mucho poder ayudar a Rodrigo ya que él comenzó con
 
 En particular, me sentí motivado al ver el compromiso y la dedicación de Rodrigo, y su disposición para apoyar y colaborar en el desarrollo del frontend y las pruebas unitarias fue admirable.
 
+### Reflexión Rodrigo Conze
+Durante esta segunda parte del proyecto, mis tareas estuvieron enfocadas mas que nada a lo que fue el desarrollo backend de la aplicación. Si bien actualmente trabajo como desarrollador, esta fué la primera vez que desarrollé una aplicación totalmente desde cero, ya que en la empresa en la que me encuentro ya existe un producto definido sobre el cual trabajamos. Esto me dió otra perspectiva y me hizo aprender cosas que seguro me serán útiles en el ámbito laboral y académico.
+También aprendí mucho en la parte técnica, ya que nunca había trabajado con Bootstrap ni NodeJS, y pude ver herramientas y prácticas que ya estoy aplicando hoy en el trabajo.
+
+La experiencia de trabajar junto a Emiliano fue excelente, ya que es una persona super reponsable y que siempre está dispuesta a ayudar en lo que sea que se necesite. Todo esto sumado a su buena onda hizo que la experiencia en el desarrollo de este proyecto sea excelente.
+
+En conclusión, este proyecto me aporto perspectivas, herramientas, conocimientos y experiencias super útiles para el futuro, y que varias de ellas ya estoy aplicando en el día a día, lo cual refuerza aún más esta conclusión.

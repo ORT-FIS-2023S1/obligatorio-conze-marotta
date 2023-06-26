@@ -1,5 +1,5 @@
 # Informe de testing 
-Proyecto asignado: [link]
+Proyecto asignado: [Obligatorio Layerle-Piria](https://github.com/ORT-FIS-2023S1/obligatorio-layerle-piria)
 
 ## Test de sistema
 
@@ -32,7 +32,7 @@ CP1    |**Nucleo familiar:** ninguna<br>**Fecha:** 26 de junio de 2023<br>**Pedi
 
  ### Testing exploratorio
 
-Sesión de Testing Exploratorio
+- Sesión de Testing Exploratorio #1
 
 |  |  |
 | -------- | -------- |
@@ -45,11 +45,31 @@ Sesión de Testing Exploratorio
 | Defectos     |  #B1 - Al agrandar cuadro de texto "Personaliza tu pedido", luego no deja achicarlo y se sale del cuadro.    |
 | Inconvenientes     | Ninguno   |
 
+- Sesión de Testing Exploratorio #2
+
+|  |  |
+| -------- | -------- |
+| Misión      | Probar la aplicación con diferentes resoluciones|
+| Inicio     | 25/06/2023 23:00|
+| Tester     | Rodrigo     |
+| Estructura de división      | Duración: Corta (25 minutos) Diseño y ejecución de pruebas: 70% Investigación y reporte de defectos: 20 % Armado de la sesión: 10% Objetivo vs. Oportunidad: 90 / 10 |
+| Archivos de datos     |     |
+| Notas de pruebas     | Se prueba el funcionamiento del sistema utilizando 4 resoluciones distintas|
+| Defectos     | #B2 - Error visual al ingresar un pedido con texto de personalización muy largo|
+| Inconvenientes     | Ninguno   |
+
 ## Reporte de issues
+Durante las sesiones de testing exploratorio se encontraron dos bugs, los cuales fueron reportados en los siguientes issues de GitHub:
+- [#B1 - Al agrandar cuadro de texto "Personaliza tu pedido", luego no deja achicarlo y se sale del cuadro.](https://github.com/ORT-FIS-2023S1/obligatorio-layerle-piria/issues/38)
+- [#B2 - Error visual al ingresar un pedido con texto de personalización muy largo](https://github.com/ORT-FIS-2023S1/obligatorio-layerle-piria/issues/39)
 
 ## Informe de calidad del sistema
+En términos generales, en los entornos en los que fue testeado el sistema este tuvo un correcto desempeño. No se encontraron errores críticos o bloqueantes, solamente 2 de severidad baja.
 
 ## Reflexión
 
 ### Reflexión Emiliano Marotta
 En lo personal, tanto el testing de nuestro proyecto, o el realizado a otro  grupo, fue una experiencia totalmente nueva y enriquecedora, que siento que me va a servir mucho en el futuro, ya que si bien el alcance del proyecto y las funcionalidades desarrolladas fueron pocas, la metodología de testing y haber abarcado todas las áreas de un proyecto, es algo que voy a tener que aplicar en el futuro.
+
+### Reflexión Rodrigo Conze
+Considero que la experiencia de testing me aportó mucho, ya que al trabajar como desarrollador, en esta instancia pude estar del otro lado y pude entender mejor el punto de vista de los testers. Me gustó también el testing cruzado con otro equipo, ya que esto significó probar una aplicación sin previo conocimiento de este, lo cual me obligó a ser mas creativo a la hora de realizar las pruebas.
