@@ -30,11 +30,26 @@ CP1    |**Nucleo familiar:** ninguna<br>**Fecha:** 26 de junio de 2023<br>**Pedi
  CP3 |**Nucleo familiar:** primera opción<br>**Fecha:** 26 de junio de 2023<br>**Pedido:** Opción 1<br>**Personalización:** ""|25/06/2023|Emiliano|El sistema ingresa el pedido y muestra mensaje de exito|Pasa|-|
  CP4  |**Nucleo familiar:** primera opción<br>**Fecha:** 26 de junio de 2023<br>**Pedido:** Opción 1<br>**Personalización:** "Sin mayonesa y sin ketchup"|25/06/2023|Rodrigo|El sistema ingresa el pedido y muestra mensaje de exito|Pasa|-|
 
+ ### Testing exploratorio
+
+Sesión de Testing Exploratorio
+
+|  |  |
+| -------- | -------- |
+| Misión      | Probar casos borde al agregar un gasto     |
+| Inicio     | 26/06/2023 23:30    |
+| Tester     | Emiliano     |
+| Estructura de división      | Duración: Corta (25 minutos) Diseño y ejecución de pruebas: 5% Investigación y reporte de defectos: 90 % Armado de la sesión: 5% Objetivo vs. Oportunidad: 95 / 5 |
+| Archivos de datos     |     |
+| Notas de pruebas     | Se prueba el historial de pedidos <br>Se prueba agregar más de 20 menús  <br> Se prueba agregar más de un menú para el mismo comensale para el mismo día   |
+| Defectos     |  #B1 - Al agrandar cuadro de texto "Personaliza tu pedido", luego no deja achicarlo y se sale del cuadro.    |
+| Inconvenientes     | Ninguno   |
+
 ## Reporte de issues
 
 ## Informe de calidad del sistema
 
 ## Reflexión
 
-
-## Reflexión
+### Reflexión Emiliano Marotta
+En lo personal, tanto el testing de nuestro proyecto, o el realizado a otro  grupo, fue una experiencia totalmente nueva y enriquecedora, que siento que me va a servir mucho en el futuro, ya que si bien el alcance del proyecto y las funcionalidades desarrolladas fueron pocas, la metodología de testing y haber abarcado todas las áreas de un proyecto, es algo que voy a tener que aplicar en el futuro.

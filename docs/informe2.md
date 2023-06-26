@@ -153,3 +153,14 @@ Test Suites: 6 passed, 6 total
 Tests:       35 passed, 35 total
 
 ## Reflexión
+
+### Reflexión Emiliano Marotta
+Trabajar en equipo con Rodrigo en el desarrollo de nuestra aplicación utilizando JavaScript y HTML ha sido una experiencia enriquecedora y gratificante. Durante todo el proceso, cada uno de nosotros tuvo roles y responsabilidades específicas, y mi tarea principal fue encargarme del código del frontend y de las pruebas unitarias.
+
+La implementación del frontend comenzó como una prueba, que finalmente le fui dando forma y luego quedó funcional.
+
+En este obligatorio, a diferencia de la primera parte, donde cada uno había hecho de todo un poco, estuvieron más diferenciadas las tareas,. Esta vez cada uno se encargó de una parte específica del proyecto.
+Sobre el backend, me costó mucho poder ayudar a Rodrigo ya que él comenzó con el código, y cuando yo cursé programación 1, se daba Java en vez de JavaScript, por lo que ayudarlo me resultó muy difícil.
+
+En particular, me sentí motivado al ver el compromiso y la dedicación de Rodrigo, y su disposición para apoyar y colaborar en el desarrollo del frontend y las pruebas unitarias fue admirable.
+
